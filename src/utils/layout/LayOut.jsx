@@ -1,14 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const LayOut = () => {
   return (
     <div>
-      <Main>
+      Layout
+      {/* <Main>
             <Header></Header>
           <Sidebar></Sidebar>
-      </Main>
+      </Main> */}
     </div>
-  )
-}
+  );
+};
 
-export default LayOut
+export default LayOut;
