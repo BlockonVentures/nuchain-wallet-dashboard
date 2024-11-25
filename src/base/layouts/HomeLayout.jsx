@@ -17,7 +17,7 @@ const HomeLayout = () => {
 
   return (
     <>
-      <>Layout</>
+      <> Home Layout</>
     </>
   );
 };
