@@ -6,7 +6,7 @@ export const fetchAnalyticsThunk = createAsyncThunk(
   "/fetchAnalytics",
   async () => {
     try {
-      const response = await axios.get("http://localhost:3001/users");
+      const response = await axios.get("http://localhost:3001/data");
 
       console.log("response", response);
       return response.data;
