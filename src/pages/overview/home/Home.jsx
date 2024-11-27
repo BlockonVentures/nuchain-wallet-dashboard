@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAnalyticsThunk } from "../../../features/thunks/AnalyticsThunk";
-import Chart from "react-apexcharts";
+import StakingPoolChart from "../../../components/Charts/PieChart/StakingPoolChart";
+import UserRegistrationChart from "../../../components/Charts/AreaChart/UserRegistrationChart";
+import ExchangeRateChart from "../../../components/Charts/AreaChart/ExchangeRateChart";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,160 +16,18 @@ const Home = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  // Convert the data into percentages based on the max value
-  console.log("analytics", analytics);
-  const rawData = analytics?.exchange_rate?.data;
-  const maxValue = Math.max(...rawData);
-  const percentageData = rawData.map((value) => (value / maxValue) * 100); // Calculate percentage of max value
-  const series = [
-    {
-      name: "Total Revenue",
-      data: percentageData, // Data points for the chart
-    },
-  ];
-
-  var options = {
-    chart: {
-      height: 280,
-      type: "area",
-      toolbar: {
-        show: false, // This hides the toolbar
-      },
-    },
-    strokeWidth: 2,
-
-    colors: ["#8712C2"],
-    dataLabels: {
-      enabled: false,
-    },
-    series: series,
-    fill: {
-      type: "gradient",
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.1,
-        opacityTo: 0.6,
-        stops: [0, 90, 100],
-      },
-    },
-    markers: {
-      size: 0, // Default size of markers
-      colors: ["#FFFFFF"], // Marker colors for each line
-      strokeColors: ["#8E44AD"], // Border color of markers
-      strokeWidth: 2,
-      hover: {
-        size: 8, // Marker size on hover
-      },
-    },
-    tooltip: {
-      custom: function ({ series, seriesIndex, dataPointIndex }) {
-        const value = series[seriesIndex][dataPointIndex];
-        return `<div style="font-size: 12px; color: #8E44AD;">
-                  ${value.toFixed(2)}%</div>`; // Display the percentage in the tooltip
-      },
-    },
-    xaxis: {
-      categories: analytics.exchange_rate.categories,
-      tooltip: {
-        enabled: false, // Remove the arrow on x-axis labels in the tooltip
-      },
-      crosshairs: {
-        show: false, // Disable the vertical dashed line on hover
-      },
-    },
-    yaxis: {
-      labels: {
-        formatter: (value) => `${value}%`, // Display percentage on y-axis
-      },
-    },
-    stroke: {
-      width: 2, // Increase the stroke width (line thickness)
-      curve: "smooth", // Optional: Make the line curve smoothly
-    },
-  };
-  const data1 = [
-    {
-      name: "New User Registrations",
-      data: analytics?.user_registration?.data,
-    },
-  ];
-
-  var options2 = {
-    chart: {
-      height: 280,
-      type: "area",
-      toolbar: {
-        show: false, // This hides the toolbar
-      },
-    },
-    strokeWidth: 2,
-
-    colors: ["#8712C2"],
-    dataLabels: {
-      enabled: false,
-    },
-    series: data1,
-    fill: {
-      type: "gradient",
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.1,
-        opacityTo: 0.6,
-        stops: [0, 90, 100],
-      },
-    },
-    // colors: ["#8712C2"],
-    // markers: {
-    //   size: 4,
-    // },
-    markers: {
-      size: 4,
-      shape: "circle",
-      colors: ["#8712C2"], // Set the marker color to match the line color
-      strokeColors: ["#fff", "red"],
-      strokeOpacity: 1,
-      // Set stroke color to white for a border
-      strokeWidth: 2,
-      hover: {
-        size: 5,
-      },
-    },
-
-    tooltip: {
-      enabled: false,
-      custom: function ({ series, seriesIndex, dataPointIndex }) {
-        const value = series[seriesIndex][dataPointIndex];
-        return `<div style="font-size: 12px; color: #8E44AD;">
-                  ${value.toFixed(2)}%</div>`; // Display the percentage in the tooltip
-      },
-    },
-    xaxis: {
-      categories: analytics?.user_registration?.categories,
-      tooltip: {
-        enabled: false, // Remove the arrow on x-axis labels in the tooltip
-      },
-      crosshairs: {
-        show: false, // Disable the vertical dashed line on hover
-      },
-    },
-    yaxis: {
-      labels: {
-        formatter: (value) => `${value}%`, // Display percentage on y-axis
-      },
-    },
-    stroke: {
-      width: 2, // Increase the stroke width (line thickness)
-      curve: "straight", // Optional: Make the line curve smoothly
-    },
-  };
+  if (!analytics || !analytics.exchange_rate || !analytics.user_registration) {
+    return <p>Data not available</p>;
+  }
 
   return (
     <div>
       <h3 style={{ marginBottom: "10px", color: "#7D7D7D" }}>
         Revenue Metrics from Fees
       </h3>
-      <Chart options={options} series={series} type="area" height={250} />
-      <Chart options={options2} series={data1} type="area" height={350} />
+      <ExchangeRateChart />
+      <UserRegistrationChart />
+      <StakingPoolChart />
     </div>
   );
 };
