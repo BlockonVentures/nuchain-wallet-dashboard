@@ -4,6 +4,9 @@ import { fetchAnalyticsThunk } from "../../../features/thunks/AnalyticsThunk";
 import StakingPoolChart from "../../../components/Charts/PieChart/StakingPoolChart";
 import UserRegistrationChart from "../../../components/Charts/AreaChart/UserRegistrationChart";
 import ExchangeRateChart from "../../../components/Charts/AreaChart/ExchangeRateChart";
+import Sidebar from "../../../components/Sidebar";
+import Navbar from "../../../components/Navbar";
+import Dashboard from "../../../components/Dashboard";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -21,13 +24,18 @@ const Home = () => {
   }
 
   return (
-    <div>
-      <h3 style={{ marginBottom: "10px", color: "#7D7D7D" }}>
-        Revenue Metrics from Fees
-      </h3>
-      <ExchangeRateChart />
-      <UserRegistrationChart />
-      <StakingPoolChart />
+    // <div className>
+    //   <h3>Revenue Metrics from Fees</h3>
+    //   <ExchangeRateChart />
+    //   <UserRegistrationChart />
+    //   <StakingPoolChart />
+    // </div>
+    <div className="flex h-screen bg-gray-100">
+      <Sidebar />
+      <div className="flex flex-col flex-grow">
+        <Navbar />
+        <Dashboard />
+      </div>
     </div>
   );
 };
