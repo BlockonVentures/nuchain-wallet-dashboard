@@ -15,7 +15,7 @@ const UserRegistrationChart = () => {
 
   const options = {
     chart: {
-      height: 280,
+      height: 260,
       type: "area",
       toolbar: {
         show: false,
@@ -77,11 +77,11 @@ const UserRegistrationChart = () => {
 
   return (
     <div>
-      <h3 style={{ marginBottom: "10px", color: "#7D7D7D" }}>
+      {/* <h3 style={{ marginBottom: "10px", color: "#7D7D7D" }}>
         User Registration
-      </h3>
+      </h3> */}
 
-      <Chart options={options} series={series} type="area" height={350} />
+      <Chart options={options} series={series} type="area" height={260} />
     </div>
   );
 };

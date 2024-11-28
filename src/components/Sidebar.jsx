@@ -2,7 +2,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 bg-white shadow-md">
+    <div className="w-1/5 bg-white shadow-md">
       <div className="p-4 text-purple-700 font-bold text-xl">
         NuChain Wallet
       </div>

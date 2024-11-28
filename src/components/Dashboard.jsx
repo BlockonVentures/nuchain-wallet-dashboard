@@ -1,6 +1,9 @@
 import React from "react";
 import Arrow from "../assets/images/circular-arrow.png";
 import UserRegistrationChart from "./Charts/AreaChart/UserRegistrationChart";
+import ExchangeRateChart from "./Charts/AreaChart/ExchangeRateChart";
+import TransactionVolumeChart from "./Charts/BarChart/TransactionVolumeChart";
+import CardHistory from "./Charts/CardHistory";
 
 const Dashboard = () => {
   return (
@@ -120,10 +123,19 @@ const Dashboard = () => {
             <UserRegistrationChart />
           </div>
         </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* <div className="bg-white shadow-md p-6 rounded-lg"> */}
+          <TransactionVolumeChart />
+          {/* </div> */}
+          <CardHistory />
+        </div>
+
         <div className="bg-white shadow-md p-6 rounded-lg">
           <h3 className="text-lg font-bold mb-4">Exchange Rate Trends</h3>
           {/* Placeholder for chart */}
-          <div className=" bg-gray-100 rounded-lg"></div>
+          <div className=" bg-gray-100 rounded-lg">
+            <ExchangeRateChart />
+          </div>
         </div>
       </div>
     </div>
