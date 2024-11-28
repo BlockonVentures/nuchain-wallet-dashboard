@@ -30,6 +30,9 @@ const ExchangeRateChart = () => {
     dataLabels: {
       enabled: false,
     },
+    grid: {
+      show: false,
+    },
     series: series,
     fill: {
       type: "gradient",
@@ -77,11 +80,7 @@ const ExchangeRateChart = () => {
   };
 
   return (
-    <div>
-      <h3 style={{ marginBottom: "10px", color: "#7D7D7D" }}>
-        User Registration
-      </h3>
-
+    <div className="bg-white">
       <Chart options={options} series={series} type="area" height={350} />
     </div>
   );

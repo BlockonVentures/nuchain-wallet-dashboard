@@ -5,6 +5,8 @@ import ExchangeRateChart from "./Charts/AreaChart/ExchangeRateChart";
 import TransactionVolumeChart from "./Charts/BarChart/TransactionVolumeChart";
 import CardHistory from "./Charts/CardHistory";
 import TransactionTable from "./TransactionTable";
+import LiquidityPoolChart from "./Charts/PieChart/LiquidityPoolChart";
+import StakingPoolChart from "./Charts/PieChart/StakingPoolChart";
 
 const Dashboard = () => {
   const transactionsData = [
@@ -155,22 +157,36 @@ const Dashboard = () => {
           {/* </div> */}
           <CardHistory />
         </div>
+      </div>
 
+      <div className="grid grid-cols-2 gap-6">
         <div className="bg-white shadow-md p-6 rounded-lg">
+          <h3 className="text-lg font-bold mb-4">Exchange Rate Trends</h3>
           {/* <h3 className="text-lg font-bold mb-4">Exchange Rate Trends</h3> */}
           {/* Placeholder for chart */}
           <div className=" bg-gray-100 rounded-lg">
             <ExchangeRateChart />
           </div>
         </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-white shadow-md p-6 rounded-lg">
+            <h3 className="text-lg font-bold mb-4">Liquidity Pool</h3>
+            <LiquidityPoolChart />
+          </div>
+          <div className="bg-white shadow-md p-6 rounded-lg">
+            <h3 className="text-lg font-bold mb-4">Staking Pool Statistics</h3>
+            <StakingPoolChart />
+          </div>
+        </div>
       </div>
+
       {/* jjjj */}
       <div className="grid  grid-cols-[75%_25%] gap-4">
         <TransactionTable transactions={transactionsData} />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* <div className="bg-white shadow-md p-6 rounded-lg"> */}
-          gggg
+
           {/* </div> */}
         </div>
       </div>

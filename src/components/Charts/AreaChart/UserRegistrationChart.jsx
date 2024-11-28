@@ -17,6 +17,7 @@ const UserRegistrationChart = () => {
     chart: {
       height: 260,
       type: "area",
+      background: "transparent",
       toolbar: {
         show: false,
       },
@@ -61,11 +62,38 @@ const UserRegistrationChart = () => {
       crosshairs: {
         show: false,
       },
+      axisBorder: {
+        show: false, // Removes the x-axis border line
+      },
+      axisTicks: {
+        show: false, // Removes the ticks on the x-axis
+      },
+
+      labels: {
+        style: {
+          colors: "#B0BBD5", // Set the label color (the numbers on the x-axis)
+          fontSize: "9px", // Optional: Change font size of x-axis labels
+          fontWeight: 700, // Optional: Set font weight
+        },
+      },
+    },
+    grid: {
+      show: false,
     },
     yaxis: {
       labels: {
         formatter: (value) => `${value}%`,
       },
+      // axisBorder: {
+      //   show: false, // Removes the x-axis border line
+      // },
+      // axisTicks: {
+      //   show: false, // Removes the ticks on the x-axis
+      // },
+      // show: false, // Removes the y-axis entirely
+      // labels: {
+      //   show: false, // Removes the y-axis labels
+      // },
     },
     stroke: {
       width: 2,
@@ -74,7 +102,7 @@ const UserRegistrationChart = () => {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       {/* <h3 style={{ marginBottom: "10px", color: "#7D7D7D" }}>
         User Registration
       </h3> */}

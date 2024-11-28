@@ -11,41 +11,42 @@ const LiquidityPoolChart = () => {
         analytics?.staking_pool?.user_participation,
         analytics?.staking_pool?.rewards,
       ]
-    : []; // Example data: 40% and 60%
+    : [];
 
-  const pieLabels = Object.keys(analytics?.staking_pool); // Labels for the pie chart
+  const pieLabels = ["a", "b", "c"];
+  //   Object.keys(analytics?.staking_pool); // Labels for the pie chart
 
   // Options for the Pie Chart
   const pieOptions = {
     chart: {
       type: "pie", // Pie chart type
-      height: 280, // Height of the chart
+      height: "100%", // Height of the chart (relative to parent container)
     },
     labels: pieLabels, // Pie chart labels
+    dataLabels: {
+      enabled: false, // Disable percentage labels
+    },
     responsive: [
       {
         breakpoint: 480,
         options: {
           chart: {
             width: "100%",
-            height: "100%",
+            height: "100%", // Ensure responsive height for smaller screens
           },
         },
       },
     ],
     colors: ["#8712C2", "#EFF4FB", "#8712C24D"], // Customize the colors
     legend: {
-      position: "right", // Position of the legend
-    },
-    tooltip: {
-      y: {
-        formatter: (val) => `${val}%`, // Format the tooltip percentage
-      },
+      position: "bottom", // Position of the legend
     },
   };
 
   return (
-    <Chart options={pieOptions} series={pieSeries} type="pie" height={250} />
+    <div className="flex items-center justify-center h-80 w-full p-4">
+      <Chart options={pieOptions} series={pieSeries} type="pie" height="100%" />
+    </div>
   );
 };
 
