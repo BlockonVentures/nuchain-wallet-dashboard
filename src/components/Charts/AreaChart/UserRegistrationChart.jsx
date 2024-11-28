@@ -21,7 +21,7 @@ const UserRegistrationChart = () => {
         show: false,
       },
     },
-    strokeWidth: 2,
+    // strokeWidth: 2,
     colors: ["#8712C2"],
     dataLabels: {
       enabled: false,
@@ -37,14 +37,12 @@ const UserRegistrationChart = () => {
       },
     },
     markers: {
-      size: 4,
-      shape: "circle",
-      colors: ["#8712C2"],
-      strokeColors: ["#fff", "red"],
-      strokeOpacity: 1,
-      strokeWidth: 2,
-      hover: {
-        size: 5,
+      size: 4, // Set the default size to 0 to hide normal markers
+      customHTML: function () {
+        // Use custom HTML or SVG for markers
+        return `<img src="https://html.com/wp-content/uploads/flamingo.webp" 
+                       style="width: 20px; height: 20px; display:block;" 
+                       alt="marker-icon"/>`;
       },
     },
     tooltip: {
@@ -81,7 +79,13 @@ const UserRegistrationChart = () => {
         User Registration
       </h3> */}
 
-      <Chart options={options} series={series} type="area" height={260} />
+      <Chart
+        className={"user_registration_chart"}
+        options={options}
+        series={series}
+        type="area"
+        height={260}
+      />
     </div>
   );
 };

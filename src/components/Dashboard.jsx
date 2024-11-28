@@ -4,8 +4,34 @@ import UserRegistrationChart from "./Charts/AreaChart/UserRegistrationChart";
 import ExchangeRateChart from "./Charts/AreaChart/ExchangeRateChart";
 import TransactionVolumeChart from "./Charts/BarChart/TransactionVolumeChart";
 import CardHistory from "./Charts/CardHistory";
+import TransactionTable from "./TransactionTable";
 
 const Dashboard = () => {
+  const transactionsData = [
+    {
+      id: "TX12345",
+      date: "2023-11-28",
+      recipient: "Alice",
+      amount: 64554,
+      status: "Pending",
+    },
+    {
+      id: "TX12345",
+      date: "2023-11-28",
+      recipient: "Alice",
+      amount: 64554,
+      status: "Active",
+    },
+    {
+      id: "TX12345",
+      date: "2023-11-28",
+      recipient: "Alice",
+      amount: 64554,
+      status: "Active",
+    },
+    // ... other transactions
+  ];
+
   return (
     <div className=" space-y-5 mx-3">
       <div className="grid xl:grid-col-6 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 justify-items-center place-items-center gap-y-5">
@@ -131,11 +157,21 @@ const Dashboard = () => {
         </div>
 
         <div className="bg-white shadow-md p-6 rounded-lg">
-          <h3 className="text-lg font-bold mb-4">Exchange Rate Trends</h3>
+          {/* <h3 className="text-lg font-bold mb-4">Exchange Rate Trends</h3> */}
           {/* Placeholder for chart */}
           <div className=" bg-gray-100 rounded-lg">
             <ExchangeRateChart />
           </div>
+        </div>
+      </div>
+      {/* jjjj */}
+      <div className="grid  grid-cols-[75%_25%] gap-4">
+        <TransactionTable transactions={transactionsData} />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* <div className="bg-white shadow-md p-6 rounded-lg"> */}
+          gggg
+          {/* </div> */}
         </div>
       </div>
     </div>

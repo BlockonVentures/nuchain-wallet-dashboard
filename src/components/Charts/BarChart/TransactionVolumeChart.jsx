@@ -20,7 +20,7 @@ const TransactionVolumeChart = () => {
       bar: {
         borderRadius: 5,
         borderRadiusApplication: "end", // Rounds the top edges only
-        columnWidth: "45%",
+        columnWidth: "40%",
       },
     },
     dataLabels: {

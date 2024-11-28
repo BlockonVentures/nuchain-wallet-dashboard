@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.user_registration_chart .apexcharts-series-markers path {
+  outline: 2px solid #dfbeef;
+  border-radius: 50%;
+}
+
+.table_scroll {
+  max-height: 300px;
+  height: 100%;
+}
+
+.table_scroll thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.success_text_para {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px !important;
+  gap: 8px;
+  border-radius: 12px;
+  background: rgba(18, 181, 44, 0.07);
+
+  color: #00b231 !important;
+  margin-bottom: 0;
+}
+.success_text_para img {
+  width: 18px;
+  height: 18px;
+}
+tr {
+  border: none !important;
+}
