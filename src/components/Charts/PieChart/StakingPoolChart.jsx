@@ -11,17 +11,23 @@ const StakingPoolChart = () => {
         analytics?.staking_pool?.user_participation,
         analytics?.staking_pool?.rewards,
       ]
-    : []; // Example data: 40% and 60%
+    : []; // Example data
 
-  const pieLabels = Object.keys(analytics?.staking_pool); // Labels for the pie chart
+  const pieLabels = [
+    "Total Amount Staked",
+    "User Participation Rates",
+    "Rewards Distribution",
+  ];
 
-  // Options for the Pie Chart
   const pieOptions = {
     chart: {
       type: "pie", // Pie chart type
-      height: 280, // Height of the chart
+      height: 250, // Height of the chart
     },
     labels: pieLabels, // Pie chart labels
+    dataLabels: {
+      enabled: false, // Disable percentage labels
+    },
     responsive: [
       {
         breakpoint: 480,
@@ -35,17 +41,88 @@ const StakingPoolChart = () => {
     ],
     colors: ["#8712C2", "#EFF4FB", "#8712C24D"], // Customize the colors
     legend: {
-      position: "bottom", // Position of the legend
+      show: false, // Hide default legend
     },
     tooltip: {
       y: {
         formatter: (val) => `${val}%`, // Format the tooltip percentage
       },
     },
+    stroke: {
+      width: 0, // Removes the border line between the segments
+    },
   };
 
   return (
-    <Chart options={pieOptions} series={pieSeries} type="pie" height={250} />
+    <div className="staking-pool-chart flex flex-col items-center justify-center h-full w-full p-4">
+      {/* Chart Component */}
+
+      <Chart
+        options={pieOptions}
+        series={pieSeries}
+        type="pie"
+        height={250}
+        width={200}
+      />
+
+      {/* Custom Legend / Labels */}
+      <div className="legend-container flex justify-around w-full mt-4 text-center">
+        <div className="legend-item flex flex-col items-center">
+          <div
+            className="legend-color"
+            style={{
+              width: "12px",
+              height: "12px",
+              backgroundColor: "#8712C2",
+              borderRadius: "50%",
+              marginBottom: "4px",
+            }}
+          />
+          <span className="legend-label text-sm text-gray-600">
+            Total Amount Staked
+          </span>
+          <span className="legend-value text-lg font-bold text-gray-800">
+            {analytics?.staking_pool?.total_amount || "0"}%
+          </span>
+        </div>
+        <div className="legend-item flex flex-col items-center">
+          <div
+            className="legend-color"
+            style={{
+              width: "12px",
+              height: "12px",
+              backgroundColor: "#EFF4FB",
+              borderRadius: "50%",
+              marginBottom: "4px",
+            }}
+          />
+          <span className="legend-label text-sm text-gray-600">
+            User Participation Rates
+          </span>
+          <span className="legend-value text-lg font-bold text-gray-800">
+            {analytics?.staking_pool?.user_participation || "0"}%
+          </span>
+        </div>
+        <div className="legend-item flex flex-col items-center">
+          <div
+            className="legend-color"
+            style={{
+              width: "12px",
+              height: "12px",
+              backgroundColor: "#8712C24D",
+              borderRadius: "50%",
+              marginBottom: "4px",
+            }}
+          />
+          <span className="legend-label text-sm text-gray-600">
+            Rewards Distribution
+          </span>
+          <span className="legend-value text-lg font-bold text-gray-800">
+            {analytics?.staking_pool?.rewards || "0"}%
+          </span>
+        </div>
+      </div>
+    </div>
   );
 };
 

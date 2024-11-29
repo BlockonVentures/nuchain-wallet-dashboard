@@ -37,7 +37,7 @@ const Dashboard = () => {
 
   return (
     <div className=" space-y-5 mx-3">
-      <div className="grid xl:grid-col-6 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 justify-items-center place-items-center gap-y-5">
+      <div className="grid xl:grid-col-6 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 justify-items-center place-items-center gap-y-5 gap-4">
         <div className="bg-white flex items-center shadow-md p-2 rounded-lg  ">
           {/* Image */}
           <div className="flex justify-center items-center w-[42px] h-[42px] bg-purple-100 rounded-full flex-shrink-0">
@@ -152,7 +152,7 @@ const Dashboard = () => {
             <UserRegistrationChart />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* <div className="bg-white shadow-md p-6 rounded-lg"> */}
           <TransactionVolumeChart />
           {/* </div> */}

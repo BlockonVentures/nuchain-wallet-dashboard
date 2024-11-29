@@ -5,17 +5,17 @@ import Dnd from "../assets/images/dnd.png";
 
 const Navbar = () => {
   return (
-    <div className=" px-6 py-4 flex justify-between items-center">
+    <div className="px-6 py-4 flex justify-between items-center flex-wrap">
       {/* Breadcrumb or Title */}
-      <div>
+      <div className="mb-4 md:mb-0">
         <p className="text-sm text-gray-500">Pages / Dashboard</p>
         <h1 className="text-2xl font-bold text-gray-800">Main Dashboard</h1>
       </div>
 
       {/* Right-side Icons and Search */}
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-3 md:space-x-6">
         {/* Search bar */}
-        <div className="relative">
+        <div className="relative hidden sm:block">
           <input
             type="text"
             placeholder="Search"
@@ -39,19 +39,15 @@ const Navbar = () => {
 
         {/* Notification icon */}
         <button className="relative text-gray-500 w-5">
-          {/* <FaBell className="w-6 h-6" /> */}
           <img src={Notifications} alt="notifications" />
           {/* <span className="absolute top-0 right-0 bg-purple-500 text-white text-xs rounded-full px-1">
             3
           </span> */}
         </button>
 
+        {/* DND Icon */}
         <button className="relative text-gray-500 w-4">
-          {/* <FaBell className="w-6 h-6" /> */}
           <img src={Dnd} alt="dnd" />
-          {/* <span className="absolute top-0 right-0 bg-purple-500 text-white text-xs rounded-full px-1">
-            3
-          </span> */}
         </button>
 
         {/* Profile Image */}

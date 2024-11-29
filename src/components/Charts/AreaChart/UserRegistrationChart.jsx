@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAnalyticsThunk } from "../../../features/thunks/AnalyticsThunk";
 import Chart from "react-apexcharts";
+import CirclePointer from "../../../assets/images/circle-pointer.png";
 
 const UserRegistrationChart = () => {
   const { analytics, loading, error } = useSelector((state) => state.analytics);
@@ -22,7 +23,6 @@ const UserRegistrationChart = () => {
         show: false,
       },
     },
-    // strokeWidth: 2,
     colors: ["#8712C2"],
     dataLabels: {
       enabled: false,
@@ -37,25 +37,18 @@ const UserRegistrationChart = () => {
         stops: [0, 90, 100],
       },
     },
-    markers: {
-      size: 6, // Set the default size to 0 to hide normal markers
-      shape: "custom",
-      // customHTML: function () {
-      //   return `
-      //     <div style="
-      //       width: 10px;
-      //       height: 10px;
-      //       background-color: #8712C2;
-      //       transform: rotate(45deg); /* Rotates the square to form a diamond */
-      //       margin: auto; /* Center the marker */
-      //     ">
-      //     </div>`;
-      // },
-      custom: function ({ series, seriesIndex, dataPointIndex }) {
-        const value = series[seriesIndex][dataPointIndex];
-        return `<div style="font-size: 12px; color: #8E44AD;">
-                  ${value.toFixed(2)}%</div>`;
-      },
+    annotations: {
+      points: analytics?.user_registration?.data?.map((value, index) => ({
+        x: analytics?.user_registration?.categories[index],
+        y: value,
+        image: {
+          path: CirclePointer, // Diamond shape image URL
+          width: 20,
+          height: 20,
+        },
+        mouseEnter: (e) => console.log("mouseEnter", e, e.x, e.y),
+        mouseLeave: (e) => console.log("mouseLeave", e, e.x, e.y),
+      })),
     },
     tooltip: {
       enabled: false,
@@ -79,7 +72,6 @@ const UserRegistrationChart = () => {
       axisTicks: {
         show: false, // Removes the ticks on the x-axis
       },
-
       labels: {
         style: {
           colors: "#B0BBD5", // Set the label color (the numbers on the x-axis)
@@ -95,16 +87,6 @@ const UserRegistrationChart = () => {
       labels: {
         formatter: (value) => `${value}%`,
       },
-      // axisBorder: {
-      //   show: false, // Removes the x-axis border line
-      // },
-      // axisTicks: {
-      //   show: false, // Removes the ticks on the x-axis
-      // },
-      // show: false, // Removes the y-axis entirely
-      // labels: {
-      //   show: false, // Removes the y-axis labels
-      // },
     },
     stroke: {
       width: 2,
@@ -114,10 +96,6 @@ const UserRegistrationChart = () => {
 
   return (
     <div className="bg-white">
-      {/* <h3 style={{ marginBottom: "10px", color: "#7D7D7D" }}>
-        User Registration
-      </h3> */}
-
       <Chart
         className={"user_registration_chart"}
         options={options}

@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .user_registration_chart .apexcharts-series-markers path {
-  outline: 2px solid #dfbeef;
-  border-radius: 50%;
-} */
+.user_registration_chart .apexcharts-series-markers path {
+  /* outline: 2px solid #dfbeef;
+  border-radius: 50%; */
+  /* transform: rotate(90deg);s */
+}
 
 .table_scroll {
   max-height: 300px;

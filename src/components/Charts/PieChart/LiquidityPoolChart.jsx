@@ -37,9 +37,12 @@ const LiquidityPoolChart = () => {
         },
       },
     ],
-    colors: ["#8712C2", "#EFF4FB", "#8712C24D"], // Customize the colors
+    colors: ["#C7329F", "#8712C2", "#872168"], // Customize the colors
     legend: {
       position: "bottom", // Position of the legend
+    },
+    stroke: {
+      width: 0, // Removes the border line between the segments
     },
   };
 
