@@ -15,7 +15,7 @@ const CardHistory = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-lg font-semibold text-gray-800">Card History</h3>
-        <button className="text-sm text-gray-500 hover:text-blue-500">
+        <button className="text-[9px]  p-2 rounded-full text-[#718096] bg-[#F3F4F6]">
           See All
         </button>
       </div>

@@ -99,7 +99,7 @@ const TransactionVolumeChart = () => {
         <select
           value={selectedOption}
           onChange={handleSelectChange}
-          className="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500"
+          className="border border-gray-300 rounded-md px-3 py-1 text-[#718096] text-[10.5px] font-normal focus:outline-none focus:ring-1"
         >
           <option value="Weekly">Weekly</option>
           <option value="Monthly">Monthly</option>

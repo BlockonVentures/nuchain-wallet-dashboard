@@ -142,7 +142,7 @@ const Dashboard = () => {
         </div>
       </div>
       {/* Charts */}
-      <div className="grid lg:grid-cols-2 gap-6">
+      <div className="grid xl:grid-cols-2 gap-6">
         <div className="bg-white shadow-md p-6 rounded-lg">
           <h3 className="text-lg font-bold mb-4">
             New User Registration Trends
