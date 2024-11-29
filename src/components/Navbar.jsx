@@ -1,4 +1,6 @@
 import React from "react";
+import Notifications from "../assets/images/notifications.png";
+import Dnd from "../assets/images/dnd.png";
 // import { FaBell } from "react-icons/fa"; // For notification icon (use any icon library)
 
 const Navbar = () => {
@@ -11,7 +13,7 @@ const Navbar = () => {
       </div>
 
       {/* Right-side Icons and Search */}
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-3">
         {/* Search bar */}
         <div className="relative">
           <input
@@ -36,8 +38,17 @@ const Navbar = () => {
         </div>
 
         {/* Notification icon */}
-        <button className="relative text-gray-500">
+        <button className="relative text-gray-500 w-5">
           {/* <FaBell className="w-6 h-6" /> */}
+          <img src={Notifications} alt="notifications" />
+          {/* <span className="absolute top-0 right-0 bg-purple-500 text-white text-xs rounded-full px-1">
+            3
+          </span> */}
+        </button>
+
+        <button className="relative text-gray-500 w-4">
+          {/* <FaBell className="w-6 h-6" /> */}
+          <img src={Dnd} alt="dnd" />
           {/* <span className="absolute top-0 right-0 bg-purple-500 text-white text-xs rounded-full px-1">
             3
           </span> */}
