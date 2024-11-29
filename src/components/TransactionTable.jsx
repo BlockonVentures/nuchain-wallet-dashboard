@@ -80,39 +80,43 @@ const TransactionTable = ({ transactions }) => {
             {transactions?.map((item) => (
               <tr key={item.id} className="border-t">
                 <td className="px-4 py-2">
-                  <p className="mb-0">#{item?.id}</p>
+                  <p className="mb-0 text-[9px] font-normal">#{item?.id}</p>
                 </td>
                 <td className="px-4 py-2">
                   <div className="flex items-center">
                     <div className="w-4 h-4 mr-1">
                       <img src={Clock} alt="clock" />
                     </div>
-                    <p className="capitalize mb-0">23 September</p>
+                    <p className="capitalize mb-0 text-[9px] font-normal">
+                      23 September
+                    </p>
                   </div>
                 </td>
                 <td className="px-4 py-2">
-                  <div className="flex">
+                  <div className="flex items-center">
                     <div className="w-6 h-6 mr-2">
                       <img src={User} alt="user" />
                     </div>
-                    <p className="capitalize">{item?.recipient}</p>
+                    <p className="capitalize text-[9px] font-normal mb-0">
+                      {item?.recipient}
+                    </p>
                   </div>
                 </td>
-                <td className="px-2 py-2">
-                  <p>
+                <td className="px-2 py-2 ">
+                  <p className="mb-0">
                     <div
-                      className={` ${"success_text_para capitalize text-green-500  p-3"} text-[14px] flex`}
+                      className={` ${"success_text_para capitalize text-green-500 "} py-2 text-[14px] flex`}
                     >
                       +${item?.amount || 0}
                     </div>
                   </p>
                 </td>
                 <td className="">
-                  <p className={`  px-2 py-2  font-normal flex `}>
+                  <p className={`  px-2 py-2  font-normal flex mb-0`}>
                     <div
                       className={` ${
                         item?.status === "Active"
-                          ? "success_text_para capitalize text-green-500  p-3"
+                          ? "success_text_para capitalize text-green-500  py-2"
                           : "text-[#868686]"
                       } text-[14px] flex`}
                     >
