@@ -13,7 +13,7 @@ const LiquidityPoolChart = () => {
       ]
     : [];
 
-  const pieLabels = ["a", "b", "c"];
+  const pieLabels = ["ETH", "BTC", "BNB", "SOL", "ADA", "XRP", "ATOM", "DOGE"];
   //   Object.keys(analytics?.staking_pool); // Labels for the pie chart
 
   // Options for the Pie Chart
@@ -35,11 +35,19 @@ const LiquidityPoolChart = () => {
             height: "100%", // Ensure responsive height for smaller screens
           },
         },
+        legend: {
+          fontSize: "12px",
+          markers: {
+            width: 8, // Smaller marker size for legend
+            height: 8,
+          },
+        },
       },
     ],
     colors: ["#C7329F", "#8712C2", "#872168"], // Customize the colors
     legend: {
-      position: "bottom", // Position of the legend
+      position: "right", // Position of the legend
+      fontSize: "9px",
     },
     stroke: {
       width: 0, // Removes the border line between the segments
@@ -47,8 +55,14 @@ const LiquidityPoolChart = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-80 w-full p-4">
-      <Chart options={pieOptions} series={pieSeries} type="pie" height="100%" />
+    <div className="flex items-center justify-center w-full p-4">
+      <Chart
+        options={pieOptions}
+        series={pieSeries}
+        type="pie"
+        height="100%"
+        width={"95%"}
+      />
     </div>
   );
 };

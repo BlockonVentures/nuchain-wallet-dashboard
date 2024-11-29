@@ -142,7 +142,7 @@ const Dashboard = () => {
         </div>
       </div>
       {/* Charts */}
-      <div className="grid xl:grid-cols-2 gap-4">
+      <div className="grid xl:grid-cols-2 gap-3">
         <div className="bg-white shadow-md p-6 rounded-lg">
           <h3 className="text-lg font-bold mb-4">
             New User Registration Trends
@@ -152,7 +152,7 @@ const Dashboard = () => {
             <UserRegistrationChart />
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {/* <div className="bg-white shadow-md p-6 rounded-lg"> */}
           <TransactionVolumeChart />
           {/* </div> */}
@@ -160,7 +160,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6">
+      <div className="grid lg:grid-cols-2 gap-3">
         <div className="bg-white shadow-md p-6 rounded-lg">
           <h3 className="text-lg font-bold mb-4">Exchange Rate Trends</h3>
           {/* <h3 className="text-lg font-bold mb-4">Exchange Rate Trends</h3> */}
@@ -169,7 +169,7 @@ const Dashboard = () => {
             <ExchangeRateChart />
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           <div className="bg-white shadow-md p-6 rounded-lg">
             <h3 className="text-lg font-bold mb-4">Liquidity Pool</h3>
             <LiquidityPoolChart />

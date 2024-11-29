@@ -54,7 +54,7 @@ const StakingPoolChart = () => {
   };
 
   return (
-    <div className="staking-pool-chart flex flex-col items-center justify-center h-full w-full p-4">
+    <div className="staking-pool-chart flex flex-col items-center  h-full w-full pb-4">
       {/* Chart Component */}
 
       <Chart
@@ -62,62 +62,45 @@ const StakingPoolChart = () => {
         series={pieSeries}
         type="pie"
         height={250}
-        width={200}
+        width={"50%"}
       />
 
       {/* Custom Legend / Labels */}
-      <div className="legend-container flex justify-around w-full mt-4 text-center">
-        <div className="legend-item flex flex-col items-center">
-          <div
-            className="legend-color"
-            style={{
-              width: "12px",
-              height: "12px",
-              backgroundColor: "#8712C2",
-              borderRadius: "50%",
-              marginBottom: "4px",
-            }}
-          />
-          <span className="legend-label text-sm text-gray-600">
-            Total Amount Staked
-          </span>
-          <span className="legend-value text-lg font-bold text-gray-800">
+
+      <div
+        className="flex justify-around w-full mt-20 text-center rounded-lg shadow py-4 overflow-auto 
+        px-3 flex-nowrap gap-3
+    
+      "
+      >
+        <div className="flex flex-col">
+          <div className="relative">
+            <div className=" pl-4 text-[#A3AED0] ml-1 text-[8.25px] font-medium bullet1 text-left text-nowrap">
+              Total Amount <br /> Staked
+            </div>
+          </div>
+          <span className=" text-lg font-bold text-[#2B3674] text-[13.5px]">
             {analytics?.staking_pool?.total_amount || "0"}%
           </span>
         </div>
-        <div className="legend-item flex flex-col items-center">
-          <div
-            className="legend-color"
-            style={{
-              width: "12px",
-              height: "12px",
-              backgroundColor: "#EFF4FB",
-              borderRadius: "50%",
-              marginBottom: "4px",
-            }}
-          />
-          <span className="legend-label text-sm text-gray-600">
-            User Participation Rates
-          </span>
-          <span className="legend-value text-lg font-bold text-gray-800">
+
+        <div className="flex flex-col ">
+          <div className="relative">
+            <div className=" pl-4 text-[#A3AED0] ml-1 text-[8.25px] font-medium bullet2 text-left text-nowrap">
+              User Participation <br /> Rates
+            </div>
+          </div>
+          <span className=" text-lg font-bold text-[#2B3674] text-[13.5px]">
             {analytics?.staking_pool?.user_participation || "0"}%
           </span>
         </div>
-        <div className="legend-item flex flex-col items-center">
-          <div
-            className="legend-color"
-            style={{
-              width: "12px",
-              height: "12px",
-              backgroundColor: "#8712C24D",
-              borderRadius: "50%",
-              marginBottom: "4px",
-            }}
-          />
-          <span className="legend-label text-sm text-gray-600">
-            Rewards Distribution
-          </span>
-          <span className="legend-value text-lg font-bold text-gray-800">
+        <div className="flex flex-col ">
+          <div className="relative">
+            <div className=" pl-4 text-[#A3AED0] ml-1 text-[8.25px] font-medium bullet3 text-left text-nowrap">
+              Rewards <br /> Distribution
+            </div>
+          </div>
+          <span className=" text-lg font-bold text-[#2B3674] text-[13.5px]">
             {analytics?.staking_pool?.rewards || "0"}%
           </span>
         </div>

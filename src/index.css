@@ -8,6 +8,49 @@
   /* transform: rotate(90deg);s */
 }
 
+.apx-legend-position-right {
+  overflow: visible !important;
+}
+.bullet1::before {
+  content: "";
+  position: absolute;
+  /* bottom: 7px; */
+  left: 0;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #8711c2;
+  border-radius: 50%;
+}
+.bullet2::before {
+  content: "";
+  position: absolute;
+  /* bottom: 7px; */
+  left: 0;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #eff4fb;
+  border-radius: 50%;
+}
+.bullet3::before {
+  content: "";
+  position: absolute;
+  /* bottom: 7px; */
+  left: 0;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #8712c24d;
+  border-radius: 50%;
+}
+
+.apexcharts-legend.apx-legend-position-bottom {
+  flex-wrap: nowrap !important;
+}
 .table_scroll {
   max-height: 300px;
   height: 100%;
