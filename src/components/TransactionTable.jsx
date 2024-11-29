@@ -4,6 +4,7 @@ import CheckCircle from "../assets/images/CheckCircle.png";
 import WrongIcon from "../assets/images/WrongIcon.png";
 import User from "../assets/images/user.png";
 import Clock from "../assets/images/clock.png";
+import Chevrons from "../assets/images/chevrons-up-down.png";
 
 const TransactionTable = ({ transactions }) => {
   const [filteredTransactions, setFilteredTransactions] =
@@ -33,18 +34,22 @@ const TransactionTable = ({ transactions }) => {
 
   return (
     <div className="bg-white shadow-md rounded-md overflow-x-auto pl-7 pr-5 py-4">
-      <div className="flex justify-between mb-2">
+      <div className="flex justify-between mb-8">
         <div className="text-xs font-bold text-[#1F2937] flex justify-center items-center">
           Transactions
         </div>
         <select
-          className="border border-gray-300 rounded px-4 py-2"
+          //   className="border border-gray-300 rounded px-4 py-2 text-[10.5px] text-[#868686]"
+          className="appearance-none  rounded px-3 py-2 text-xs text-[#868686] bg-white bg-no-repeat bg-right bg-[length:12px_16px] focus:outline-none"
           value={filter}
           onChange={handleFilterChange}
+          style={{
+            backgroundImage: `url(${Chevrons})`, // Replace with your double-arrow icon
+          }}
         >
           <option value="All Time">All Time</option>
-          <option value="Last Week">Last Week</option>
-          <option value="Last Month">Last Month</option>  
+          <option value="Last Week">Weekly</option>
+          <option value="Last Month">Monthly</option>  
           {/* Add more filter options as needed */}
         </select>
       </div>

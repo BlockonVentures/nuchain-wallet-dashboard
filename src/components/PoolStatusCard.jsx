@@ -5,12 +5,7 @@ import Stake from "../assets/images/stake.png";
 
 const PoolStatusCard = () => {
   return (
-    <div
-      className="bg-white shadow-md rounded-lg p-4 w-full 
-    
-    
-    "
-    >
+    <div className="bg-white shadow-md rounded-lg p-4 w-full">
       {/* Header */}
       <div className="flex flex-col md:flex-row items-start md:items-center mb-4">
         <div className="w-10 h-10 flex justify-center items-center bg-[#FEEFEE] rounded-xl p-2">
