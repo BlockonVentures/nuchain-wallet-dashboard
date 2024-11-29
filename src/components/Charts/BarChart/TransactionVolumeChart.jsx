@@ -15,7 +15,20 @@ const TransactionVolumeChart = () => {
       },
       type: "bar",
     },
-    colors: ["#a855f7"], // Gradient purple color
+    fill: {
+      type: "gradient", // Enable gradient fill
+      gradient: {
+        shade: "light",
+        type: "vertical", // Vertical gradient
+        shadeIntensity: 0.5,
+        gradientToColors: ["#8712C208"], // Target gradient color
+        inverseColors: false,
+        opacityFrom: 1, // Starting opacity (100%)
+        opacityTo: 0.03, // Ending opacity (3%)
+        stops: [0, 100], // Start and end positions for gradient
+      },
+    },
+    colors: ["#8712C2"], // Gradient purple color
     plotOptions: {
       bar: {
         borderRadius: 5,

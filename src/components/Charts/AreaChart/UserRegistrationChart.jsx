@@ -38,12 +38,23 @@ const UserRegistrationChart = () => {
       },
     },
     markers: {
-      size: 4, // Set the default size to 0 to hide normal markers
-      customHTML: function () {
-        // Use custom HTML or SVG for markers
-        return `<img src="https://html.com/wp-content/uploads/flamingo.webp" 
-                       style="width: 20px; height: 20px; display:block;" 
-                       alt="marker-icon"/>`;
+      size: 6, // Set the default size to 0 to hide normal markers
+      shape: "custom",
+      // customHTML: function () {
+      //   return `
+      //     <div style="
+      //       width: 10px;
+      //       height: 10px;
+      //       background-color: #8712C2;
+      //       transform: rotate(45deg); /* Rotates the square to form a diamond */
+      //       margin: auto; /* Center the marker */
+      //     ">
+      //     </div>`;
+      // },
+      custom: function ({ series, seriesIndex, dataPointIndex }) {
+        const value = series[seriesIndex][dataPointIndex];
+        return `<div style="font-size: 12px; color: #8E44AD;">
+                  ${value.toFixed(2)}%</div>`;
       },
     },
     tooltip: {

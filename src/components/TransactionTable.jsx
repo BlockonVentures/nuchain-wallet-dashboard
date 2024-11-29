@@ -80,7 +80,7 @@ const TransactionTable = ({ transactions }) => {
             {transactions?.map((item) => (
               <tr key={item.id} className="border-t">
                 <td className="px-4 py-2">
-                  <p>#{item?.id}</p>
+                  <p className="mb-0">#{item?.id}</p>
                 </td>
                 <td className="px-4 py-2">
                   <div className="flex items-center">

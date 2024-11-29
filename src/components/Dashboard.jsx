@@ -7,6 +7,7 @@ import CardHistory from "./Charts/CardHistory";
 import TransactionTable from "./TransactionTable";
 import LiquidityPoolChart from "./Charts/PieChart/LiquidityPoolChart";
 import StakingPoolChart from "./Charts/PieChart/StakingPoolChart";
+import PoolStatusCard from "./PoolStatusCard";
 
 const Dashboard = () => {
   const transactionsData = [
@@ -181,14 +182,14 @@ const Dashboard = () => {
       </div>
 
       {/* jjjj */}
-      <div className="grid  grid-cols-[75%_25%] gap-4">
+      <div className="grid  lg:grid-cols-[70%_28%] md gap-4">
         <TransactionTable transactions={transactionsData} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* <div className="bg-white shadow-md p-6 rounded-lg"> */}
-
-          {/* </div> */}
-        </div>
+        {/* <div className="grid grid-cols-1 lg:grid-cols-1 gap-6"> */}
+        {/* <div className="bg-white shadow-md p-6 rounded-lg"> */}
+        <PoolStatusCard />
+        {/* </div> */}
+        {/* </div> */}
       </div>
     </div>
   );
