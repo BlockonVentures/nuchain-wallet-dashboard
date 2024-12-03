@@ -62,7 +62,7 @@ const StakingPoolChart = () => {
         series={pieSeries}
         type="pie"
         height={250}
-        width={"50%"}
+        width={"60%"}
       />
 
       {/* Custom Legend / Labels */}

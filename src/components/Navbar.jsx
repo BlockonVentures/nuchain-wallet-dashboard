@@ -1,15 +1,30 @@
 import React from "react";
 import Notifications from "../assets/images/notifications.png";
 import Dnd from "../assets/images/dnd.png";
+import { useLocation } from "react-router-dom";
 // import { FaBell } from "react-icons/fa"; // For notification icon (use any icon library)
 
 const Navbar = () => {
+  const { pathname } = useLocation();
+  // Map of paths to page titles
+  const pageTitles = {
+    "/": "Main Dashboard",
+    "/liquidity-pool": "Liquidity Pool Management",
+    // Add more routes and titles as needed
+  };
+
+  // Dynamic title based on pathname
+  const pageTitle = pageTitles[pathname] || "Unknown Page";
+  const breadcrumb =
+    pathname === "/" ? "Pages/Dashboard" : `Pages${pathname.replace("-", " ")}`;
+
   return (
     <div className="px-6 py-4 flex justify-between items-center flex-wrap">
       {/* Breadcrumb or Title */}
       <div className="mb-4 md:mb-0">
-        <p className="text-sm text-gray-500">Pages / Dashboard</p>
-        <h1 className="text-2xl font-bold text-gray-800">Main Dashboard</h1>
+        <p className="text-sm text-gray-500 capitalize">{breadcrumb}</p>
+
+        <h1 className="text-2xl font-bold text-gray-800">{pageTitle}</h1>
       </div>
 
       {/* Right-side Icons and Search */}

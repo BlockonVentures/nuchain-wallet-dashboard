@@ -1,5 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Sidebar from "../../components/Sidebar";
+import Navbar from "../../components/Navbar";
 
 const HomeLayout = () => {
   const { pathname } = useLocation();
@@ -18,7 +20,13 @@ const HomeLayout = () => {
   return (
     <>
       {/* <>Home Layout</> */}
-      <Outlet />
+      <div className="flex h-screen bg-gray-100">
+        <Sidebar />
+        <div className="flex flex-col flex-grow overflow-y-auto">
+          <Navbar />
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 };
