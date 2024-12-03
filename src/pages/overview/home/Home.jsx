@@ -30,13 +30,13 @@ const Home = () => {
     //   <UserRegistrationChart />
     //   <StakingPoolChart />
     // </div>
-    <div className="flex h-screen bg-gray-100">
-      <Sidebar />
-      <div className="flex flex-col flex-grow overflow-y-auto">
-        <Navbar />
-        <Dashboard />
-      </div>
-    </div>
+    // <div className="flex h-screen bg-gray-100">
+    //   <Sidebar />
+    //   <div className="flex flex-col flex-grow overflow-y-auto">
+    //     <Navbar />
+    <Dashboard />
+    //   </div>
+    // </div>
   );
 };
 

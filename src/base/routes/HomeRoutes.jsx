@@ -7,7 +7,7 @@ const HomeRoutes = () => {
     <Routes>
       <Route path="/" element={<HomeLayout />}>
         <Route index element={<Home />} />
-
+        <Route path="/liquidity-pool" element={<>jjjj</>} />
         {/* <Route path="/not-found" element={<NotFound />} />
         <Route path="/network-error" element={<NetworkError />} />
       
