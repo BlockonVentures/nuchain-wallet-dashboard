@@ -54,7 +54,7 @@ const StakingPoolChart = () => {
   };
 
   return (
-    <div className="staking-pool-chart flex flex-col items-center  h-full w-full pb-4">
+    <div className="flex flex-col items-center w-full h-full pb-4 staking-pool-chart">
       {/* Chart Component */}
 
       <Chart
@@ -63,15 +63,13 @@ const StakingPoolChart = () => {
         type="pie"
         height={250}
         width={"50%"}
+            data-testid="mock-chart"
       />
 
       {/* Custom Legend / Labels */}
 
       <div
-        className="flex justify-around w-full mt-20 text-center rounded-lg shadow py-4 overflow-auto 
-        px-3 flex-nowrap gap-3
-    
-      "
+        className="flex justify-around w-full gap-3 px-3 py-4 mt-20 overflow-auto text-center rounded-lg shadow flex-nowrap "
       >
         <div className="flex flex-col">
           <div className="relative">
