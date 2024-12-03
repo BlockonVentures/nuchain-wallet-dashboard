@@ -1,9 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAnalyticsThunk } from "../../../features/thunks/AnalyticsThunk";
+import StakingPoolChart from "../../../components/Charts/PieChart/StakingPoolChart";
+import UserRegistrationChart from "../../../components/Charts/AreaChart/UserRegistrationChart";
+import ExchangeRateChart from "../../../components/Charts/AreaChart/ExchangeRateChart";
+import Sidebar from "../../../components/Sidebar";
+import Navbar from "../../../components/Navbar";
 import Dashboard from "../../../components/Dashboard";
 
-const Home = () => {
+const LiquidityPool = () => {
   const dispatch = useDispatch();
   const { analytics, loading, error } = useSelector((state) => state.analytics);
 
@@ -18,7 +23,7 @@ const Home = () => {
     return <p>Data not available</p>;
   }
 
-  return <Dashboard />;
+  return <>ddd</>;
 };
 
-export default Home;
+export default LiquidityPool;
