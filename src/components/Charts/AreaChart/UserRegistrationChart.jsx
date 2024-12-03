@@ -102,7 +102,10 @@ const UserRegistrationChart = () => {
         series={series}
         type="area"
         height={260}
+<<<<<<< HEAD
          data-testid="UserRegistrationChart"
+=======
+>>>>>>> da7594229a9af5924c80607a7ac77357e92025c3
       />
     </div>
   );

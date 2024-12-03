@@ -81,7 +81,11 @@ const ExchangeRateChart = () => {
 
   return (
     <div className="bg-white">
+<<<<<<< HEAD
       <Chart options={options} series={series} type="area" height={350} data-testid="ExchangeRateChart" />
+=======
+      <Chart options={options} series={series} type="area" height={350} />
+>>>>>>> da7594229a9af5924c80607a7ac77357e92025c3
     </div>
   );
 };

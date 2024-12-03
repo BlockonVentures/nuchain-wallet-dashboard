@@ -35,6 +35,7 @@ const LiquidityPoolChart = () => {
             height: "100%", // Ensure responsive height for smaller screens
           },
         },
+<<<<<<< HEAD
         legend: {
           fontSize: "12px",
           markers: {
@@ -42,10 +43,23 @@ const LiquidityPoolChart = () => {
             height: 8,
           },
         },
+=======
+        // legend: {
+        //   fontSize: "12px",
+        //   markers: {
+        //     width: 8, // Smaller marker size for legend
+        //     height: 8,
+        //   },
+        // },
+>>>>>>> da7594229a9af5924c80607a7ac77357e92025c3
       },
     ],
     colors: ["#C7329F", "#8712C2", "#872168"], // Customize the colors
     legend: {
+<<<<<<< HEAD
+=======
+      show: false,
+>>>>>>> da7594229a9af5924c80607a7ac77357e92025c3
       position: "right", // Position of the legend
       fontSize: "9px",
     },
@@ -55,14 +69,22 @@ const LiquidityPoolChart = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="flex items-center justify-center w-full p-4">
+=======
+    <div className="flex items-center justify-center h-[260px] w-full p-4">
+>>>>>>> da7594229a9af5924c80607a7ac77357e92025c3
       <Chart
         options={pieOptions}
         series={pieSeries}
         type="pie"
         height="100%"
+<<<<<<< HEAD
         width={"95%"}
         data-testid="liduidityPool-chart"
+=======
+        width={"100%"}
+>>>>>>> da7594229a9af5924c80607a7ac77357e92025c3
       />
     </div>
   );
