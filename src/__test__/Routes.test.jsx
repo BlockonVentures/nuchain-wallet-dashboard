@@ -6,6 +6,10 @@ import { Signin } from "../pages/Signin";
 import { SignUp } from "../pages/SignUp";
 import { SignInOtp } from "../pages/SignInOtp";
 import { SignUpOtp } from "../pages/SignUpOtp";
+import { Payment } from "../pages/Payment";
+import { StackingPool } from "../pages/StackingPool";
+import { UserManagement } from "../pages/UserManagement";
+import { TransectionManageMent } from "../pages/TransectionManageMent";
 
 
 
@@ -15,6 +19,10 @@ const routeData = [
   { path: "/sign-up", element: <SignUp/>, testId: "SignUp" },
   { path: "/sign-in/otp", element: <SignInOtp/>, testId: "SignInOtp" },
   { path: "/sign-up/otp", element: <SignUpOtp/>, testId: "SignUpOtp" },
+  { path: "/transaction-management", element: <TransectionManageMent/>, testId: "Transaction-Management" },
+  { path: "/staking-pool", element: <StackingPool/>, testId: "Stacking-pool" },
+  { path: "/payment", element: <Payment/>, testId: "payment" },
+  { path: "/user-management", element: <UserManagement/>, testId: "user-ManageMent" },
 ];
 
 describe("AuthRoutes", () => {
