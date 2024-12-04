@@ -9,7 +9,7 @@ export const ProfileBar = () => {
     
   return (
     <div
-    className="absolute z-50 p-3 bg-white shadow-md w-80 right-9 mt-7 rounded-xlc"
+    className="absolute z-50 p-3 bg-white shadow-md w-80 right-9 mt-7 rounded-xl"
   >
     <ul className="flex flex-col px-2  gap-[20px]">
       {/* Profile Settings Link */}
