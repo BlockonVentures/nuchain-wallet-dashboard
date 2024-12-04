@@ -1,13 +1,5 @@
 import React from "react";
 import Arrow from "../assets/images/circular-arrow.png";
-import UserRegistrationChart from "./Charts/AreaChart/UserRegistrationChart";
-import ExchangeRateChart from "./Charts/AreaChart/ExchangeRateChart";
-import TransactionVolumeChart from "./Charts/BarChart/TransactionVolumeChart";
-import CardHistory from "./Charts/CardHistory";
-import TransactionTable from "./TransactionTable";
-import LiquidityPoolChart from "./Charts/PieChart/LiquidityPoolChart";
-import StakingPoolChart from "./Charts/PieChart/StakingPoolChart";
-import PoolStatusCard from "./PoolStatusCard";
 import LiquidityPoolTransactionChart from "./Charts/BarChart/LiquidityPoolTransactionChart";
 import PoolTable from "./PoolTable";
 

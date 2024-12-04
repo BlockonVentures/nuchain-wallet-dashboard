@@ -19,7 +19,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="hidden sm:block w-[26%] bg-white shadow-lg h-screen">
+    <div className="hidden sm:block w-[26%] max-w-[250px] bg-white shadow-lg h-screen">
       {/* Logo Section */}
       <div className="p-4 flex items-center mb-7">
         <img src={Logo} alt="logo" className="h-12 w-auto" />
