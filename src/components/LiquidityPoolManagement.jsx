@@ -9,6 +9,7 @@ import LiquidityPoolChart from "./Charts/PieChart/LiquidityPoolChart";
 import StakingPoolChart from "./Charts/PieChart/StakingPoolChart";
 import PoolStatusCard from "./PoolStatusCard";
 import LiquidityPoolTransactionChart from "./Charts/BarChart/LiquidityPoolTransactionChart";
+import PoolTable from "./PoolTable";
 
 const LiquidityPoolManagement = () => {
   const transactionsData = [
@@ -140,7 +141,7 @@ const LiquidityPoolManagement = () => {
       <div className="grid grid-cols-1 gap-3">
         {/* Placeholder for chart */}
 
-        <TransactionTable transactions={transactionsData} />
+        <PoolTable transactions={transactionsData} />
         <LiquidityPoolTransactionChart />
       </div>
     </div>
