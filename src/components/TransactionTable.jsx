@@ -33,7 +33,7 @@ const TransactionTable = ({ transactions }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-md overflow-x-auto pl-7 pr-5 py-4">
+    <div className="py-4 pr-5 overflow-x-auto bg-white rounded-md shadow-md pl-7">
       <div className="flex justify-between mb-8">
         <div className="text-xs font-bold text-[#1F2937] flex justify-center items-center">
           Transactions
@@ -55,35 +55,35 @@ const TransactionTable = ({ transactions }) => {
       </div>
 
       <div className="overflow-x-auto border-0 table_scroll">
-        <table className="min-w-full table-auto border-collapse">
+        <table className="min-w-full border-collapse table-auto">
           <thead>
             <tr>
-              <th className="flex items-center gap-2 px-4 py-2 text-left font-semibold text-gray-700">
+              <th className="flex items-center gap-2 px-4 py-2 font-semibold text-left text-gray-700">
                 Card{" "}
                 <button className="w-4 h-4 ">
                   <img src={DoubleArrow} alt="DoubleArrow" />
                 </button>
               </th>
-              <th className="px-4 py-2 text-left font-semibold text-gray-700">
+              <th className="px-4 py-2 font-semibold text-left text-gray-700">
                 Date
               </th>
-              <th className="flex items-center gap-2 px-4 py-2 text-left font-semibold text-gray-700">
+              <th className="flex items-center gap-2 px-4 py-2 font-semibold text-left text-gray-700">
                 Recipient
                 <button className="w-4 h-4 ">
                   <img src={DoubleArrow} alt="DoubleArrow" />
                 </button>
               </th>
-              <th className="px-4 py-2 text-left font-semibold text-gray-700">
+              <th className="px-4 py-2 font-semibold text-left text-gray-700">
                 Amount
               </th>
-              <th className="px-4 py-2 text-left font-semibold text-gray-700">
+              <th className="px-4 py-2 font-semibold text-left text-gray-700">
                 Status
               </th>
             </tr>
           </thead>
           <tbody>
-            {transactions?.map((item) => (
-              <tr key={item.id} className="border-t">
+            { transactions && transactions.length>0 ? transactions?.map((item) => (
+              <tr key={item.id} className="border-t" data-testid="dataTransactionTable">
                 <td className="px-4 py-2">
                   <p className="mb-0 text-[9px] font-normal">#{item?.id}</p>
                 </td>
@@ -108,16 +108,16 @@ const TransactionTable = ({ transactions }) => {
                   </div>
                 </td>
                 <td className="px-2 py-2 ">
-                  <p className="mb-0">
+                  <div className="mb-0">
                     <div
                       className={` ${"success_text_para capitalize text-green-500 "} py-2 text-[14px] flex`}
                     >
                       +${item?.amount || 0}
                     </div>
-                  </p>
+                  </div>
                 </td>
                 <td className="">
-                  <p className={`  px-2 py-2  font-normal flex mb-0`}>
+                  <div className={`  px-2 py-2  font-normal flex mb-0`}>
                     <div
                       className={` ${
                         item?.status === "Active"
@@ -128,22 +128,27 @@ const TransactionTable = ({ transactions }) => {
                       {item?.status === "Active" ? (
                         <img src={CheckCircle} alt="CheckCircle" />
                       ) : (
-                        <div className="w-6 h-6 flex mr-1">
+                        <div className="flex w-6 h-6 mr-1">
                           <img src={WrongIcon} alt="WrongIcon" />
                         </div>
                       )}
                       {item?.status}
                     </div>
-                  </p>
+                  </div>
                 </td>
               </tr>
-            ))}
+            )) : <tr > 
+            <td colSpan="5">
+              <h1 data-testid="noDataTransactionTable"> No data avialibile</h1>
+            </td>
+           
+            </tr>}
           </tbody>
         </table>
       </div>
 
-      {/* <div className="text-center mt-4">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      {/* <div className="mt-4 text-center">
+        <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
           View All
         </button>
       </div> */}

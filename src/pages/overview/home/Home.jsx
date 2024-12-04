@@ -5,14 +5,14 @@ import Dashboard from "../../../components/Dashboard";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { analytics, loading, error } = useSelector((state) => state.analytics);
+  const { analytics, loading, error,loader } = useSelector((state) => state.analytics);
 
   useEffect(() => {
     dispatch(fetchAnalyticsThunk());
   }, [dispatch]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loader[fetchAnalyticsThunk.pending]) return <p data-testid="loader">Loading...</p>;
+  if (error) return <p data-testid="ErrorHome">Error: {error}</p>;
 
   if (!analytics || !analytics.exchange_rate || !analytics.user_registration) {
     return <p>Data not available</p>;

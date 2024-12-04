@@ -63,6 +63,7 @@ const LiquidityPoolChart = () => {
         type="pie"
         height="100%"
         width={"100%"}
+        data-testid="liduidityPool-chart"
       />
     </div>
   );

@@ -20,7 +20,7 @@ const HomeLayout = () => {
   return (
     <>
       {/* <>Home Layout</> */}
-      <div className="flex h-screen bg-gray-100">
+      <div className="flex h-screen bg-gray-100" data-testid="HomeLayout">
         <Sidebar />
         <div className="flex flex-col flex-grow overflow-y-auto">
           <Navbar />

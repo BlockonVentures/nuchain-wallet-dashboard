@@ -8,7 +8,6 @@ export const fetchAnalyticsThunk = createAsyncThunk(
     try {
       const response = await axios.get("http://localhost:3001/data");
 
-      console.log("response", response);
       return response.data;
     } catch (error) {
       throw Error(error.response?.data?.message || error.message);
