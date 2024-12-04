@@ -10,7 +10,15 @@ const HomeRoutes = () => {
       <Route path="/" element={<HomeLayout />}>
         <Route index element={<Home />} />
         <Route path="/liquidity-pool" element={<LiquidityPool />} />
-        <Route path="/profile" element={<PersionalInfo/>} />
+        <Route
+          path="/transaction-management"
+          element={<>Transaction Management</>}
+        />
+        <Route path="/user-management" element={<>User Management</>} />
+        <Route path="/payment" element={<>Payment</>} />
+        <Route path="/staking-pool" element={<>Staking Pool</>} />
+
+        <Route path="/profile" element={<PersionalInfo />} />
         {/* <Route path="/not-found" element={<NotFound />} />
         <Route path="/network-error" element={<NetworkError />} />
       

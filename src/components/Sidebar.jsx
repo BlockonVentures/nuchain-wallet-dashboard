@@ -1,14 +1,8 @@
 import React from "react";
 import Logo from "../assets/images/Logo.png";
-import home from "../assets/images/home.png";
-import liquidityPool from "../assets/images/liquidity-pool.svg";
 import LiquidityPoolImage from "../assets/components/LiquidityPoolImage";
 import paymentGateway from "../assets/images/payment-gateway.png";
 import profile from "../assets/images/profile.png";
-import stakingPool from "../assets/images/staking-pool.png";
-import transactionManagement from "../assets/images/transaction-management.png";
-import userManagement from "../assets/images/user-management.png";
-import Dashboard from "../components/Dashboard";
 import { Link, useLocation } from "react-router-dom";
 import DashboardIcon from "../assets/components/DashboardIcon";
 import TransactionManagementIcon from "../assets/components/TransactionManagementIcon";
