@@ -35,13 +35,6 @@ const LiquidityPoolChart = () => {
             height: "100%", // Ensure responsive height for smaller screens
           },
         },
-        // legend: {
-        //   fontSize: "12px",
-        //   markers: {
-        //     width: 8, // Smaller marker size for legend
-        //     height: 8,
-        //   },
-        // },
       },
     ],
     colors: ["#C7329F", "#8712C2", "#872168"], // Customize the colors
