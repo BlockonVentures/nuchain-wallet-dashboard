@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Notifications from "../assets/images/notifications.png";
 import Dnd from "../assets/images/dnd.png";
 import { useLocation } from "react-router-dom";
+import { ProfileBar } from "./pofilesectiontap/ProfileBar";
 // import { FaBell } from "react-icons/fa"; // For notification icon (use any icon library)
 
 const Navbar = () => {
+const[profile,setprofile]=useState(false)
+
+  
   const { pathname } = useLocation();
   // Map of paths to page titles
   const pageTitles = {
@@ -18,8 +22,15 @@ const Navbar = () => {
   const breadcrumb =
     pathname === "/" ? "Pages/Dashboard" : `Pages${pathname.replace("-", " ")}`;
 
+// function for profile
+
+function HandleImageClick(){
+  setprofile(!profile)
+}
+
+
   return (
-    <div className="px-6 py-4 flex justify-between items-center flex-wrap">
+    <div className="flex flex-wrap items-center justify-between px-6 py-4">
       {/* Breadcrumb or Title */}
       <div className="mb-4 md:mb-0">
         <p className="text-sm text-gray-500 capitalize">{breadcrumb}</p>
@@ -34,7 +45,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className="px-4 py-2 w-64 bg-white rounded-full focus:outline-none"
+            className="w-64 px-4 py-2 bg-white rounded-full focus:outline-none"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,24 +64,35 @@ const Navbar = () => {
         </div>
 
         {/* Notification icon */}
-        <button className="relative text-gray-500 w-5">
+        <button className="relative w-5 text-gray-500">
           <img src={Notifications} alt="notifications" />
-          {/* <span className="absolute top-0 right-0 bg-purple-500 text-white text-xs rounded-full px-1">
+          {/* <span className="absolute top-0 right-0 px-1 text-xs text-white bg-purple-500 rounded-full">
             3
           </span> */}
         </button>
 
         {/* DND Icon */}
-        <button className="relative text-gray-500 w-4">
+        <button className="relative w-4 text-gray-500">
           <img src={Dnd} alt="dnd" />
         </button>
 
         {/* Profile Image */}
-        <img
+<button onClick={HandleImageClick}>
+<img
           src="https://via.placeholder.com/40"
           alt="Profile"
-          className="w-10 h-10 rounded-full border-2 border-purple-500"
+          className="w-10 h-10 border-2 border-purple-500 rounded-full"
         />
+</button>
+
+
+<section >
+  {
+    profile && <ProfileBar/>
+  }
+</section>
+
+
       </div>
     </div>
   );

@@ -16,35 +16,6 @@ import UserManagementIcon from "../assets/components/UserManagementIcon";
 import StakingIcon from "../assets/components/StakingIcon";
 
 const Sidebar = () => {
-  // const [activeComponent, setActiveComponent] = useState("Dashboard");
-
-  // const LiquidityPool = () => <div>Liquidity Pool Content</div>;
-  // const TransactionManagement = () => <div>Transaction Management Content</div>;
-  // const UserManagement = () => <div>User Management Content</div>;
-  // const PaymentGateway = () => <div>Payment Gateway Content</div>;
-  // const StakingPool = () => <div>Staking Pool Content</div>;
-  // const Profile = () => <div>Profile Content</div>;
-
-  // const renderComponent = () => {
-  //   switch (activeComponent) {
-  //     case "Dashboard":
-  //       return <Dashboard />;
-  //     case "LiquidityPool":
-  //       return <LiquidityPool />;
-  //     case "TransactionManagement":
-  //       return <TransactionManagement />;
-  //     case "UserManagement":
-  //       return <UserManagement />;
-  //     case "PaymentGateway":
-  //       return <PaymentGateway />;
-  //     case "StakingPool":
-  //       return <StakingPool />;
-  //     case "Profile":
-  //       return <Profile />;
-  //     default:
-  //       return <Dashboard />;
-  //   }
-  // };
   const location = useLocation();
 
   return (
