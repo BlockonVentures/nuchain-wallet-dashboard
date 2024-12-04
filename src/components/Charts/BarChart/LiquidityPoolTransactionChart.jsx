@@ -21,19 +21,20 @@ const LiquidityPoolTransactionChart = () => {
         shade: "light",
         type: "vertical", // Vertical gradient
         shadeIntensity: 0.5,
-        gradientToColors: ["#8712C208"], // Target gradient color
+        gradientToColors: ["#40095C08"], // Target gradient color
         inverseColors: false,
         opacityFrom: 1, // Starting opacity (100%)
         opacityTo: 0.03, // Ending opacity (3%)
         stops: [0, 100], // Start and end positions for gradient
       },
     },
+
     colors: ["#8712C2"], // Gradient purple color
     plotOptions: {
       bar: {
         // borderRadius: 5,
         // borderRadiusApplication: "end", // Rounds the top edges only
-        columnWidth: "40%",
+        columnWidth: "8%",
       },
     },
     dataLabels: {
@@ -50,22 +51,25 @@ const LiquidityPoolTransactionChart = () => {
 
       labels: {
         style: {
-          colors: "#B0BBD5", // Set the label color (the numbers on the x-axis)
-          fontSize: "9px", // Optional: Change font size of x-axis labels
-          fontWeight: 700, // Optional: Set font weight
+          colors: "#9CA3AF", // Set the label color (the numbers on the x-axis)
+          fontSize: "13.76px", // Optional: Change font size of x-axis labels
+          fontWeight: 500, // Optional: Set font weight
         },
       },
     },
     yaxis: {
-      show: false, // Removes the y-axis entirely
       labels: {
-        show: false, // Removes the y-axis labels
+        style: {
+          colors: "#9CA3AF", // Set the label color (the numbers on the x-axis)
+          fontSize: "13.76px", // Optional: Change font size of x-axis labels
+          fontWeight: 500, // Optional: Set font weight
+        },
       },
     },
-    grid: {
-      show: false,
-      borderColor: "#f1f1f1",
-    },
+    // grid: {
+    //   show: false,
+    //   borderColor: "#f1f1f1",
+    // },
     tooltip: {
       enabled: true,
       y: {
@@ -86,7 +90,7 @@ const LiquidityPoolTransactionChart = () => {
   return (
     <div className="bg-white shadow-lg p-[18px] rounded-lg w-full">
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-4">
+      {/* <div className="flex justify-between items-center mb-4">
         <div>
           <div className="text-[10.5px] font-semibold text-[#A3AED0]">
             Transaction Volumes
@@ -105,6 +109,9 @@ const LiquidityPoolTransactionChart = () => {
           <option value="Monthly">Monthly</option>
           <option value="Yearly">Yearly</option>
         </select>
+      </div> */}
+      <div className="text-[#2B3674] text-xl font-semibold">
+        Liquidity Pool Transaction
       </div>
 
       {/* Chart */}
