@@ -11,6 +11,7 @@ import UserRegistrationChart from "../components/Charts/AreaChart/UserRegistrati
 import TransactionVolumeChart from "../components/Charts/BarChart/TransactionVolumeChart";
 import LiquidityPoolChart from "../components/Charts/PieChart/LiquidityPoolChart";
 import { fetchAnalytics } from "../features/reducers/AnalyticsSlice";
+import LiquidityPoolManagement from "../components/LiquidityPoolManagement";
 
 vi.mock("axios");
 let store;
@@ -261,5 +262,33 @@ describe('LiquidityPoolChart',()=>{
 
 })
 
+describe("LiquidityPoolChartManageMent",()=>{
 
+    // Component renders all six metric cards with correct labels and values
+    test('should render all six metric cards with correct labels and values', () => {
+      const { getAllByText } = render(<LiquidityPoolManagement />);
+  
+      const expectedLabels = [
+        'Total Value Locked',
+        'Pool Balance', 
+        'Liquid Providers',
+        'Pool Utilization Rate',
+        'Real Time Transaction',
+        'Active Swap Rate'
+      ];
+  
+      expectedLabels.forEach(label => {
+        const elements = getAllByText(label);
+        expect(elements).toHaveLength(1);
+      });
+  
+      const valueElements = getAllByText('3504');
+      expect(valueElements).toHaveLength(6);
+    });
+
+test('correct')
+
+
+
+})
 

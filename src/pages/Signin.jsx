@@ -7,7 +7,7 @@ import lock_LoginPassword from "../assets/images/lock_LoginPassword.png";
 export const Signin = () => {
   return (
 
-<div className="flex items-center justify-center h-screen !p-2 sm:!p-4 ">
+<div className="flex items-center justify-center h-screen !p-2 sm:!p-4 "data-testid="Signin" >
   
   <div
     className="flex items-center justify-center w-full h-full !p-2 bg-no-repeat bg-cover sm:!p-3 rounded-3xl"

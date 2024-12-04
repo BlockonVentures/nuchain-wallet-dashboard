@@ -15,7 +15,7 @@ export const ProfileBar = () => {
       {/* Profile Settings Link */}
       <li >
           <Link to="/profile" className="flex items-center gap-4 font-medium text-gray-800 no-underline font-Satoshi ">
-         <img src={Icon_profileSetting} alt=""  className='w-4 h-4'/>
+         <img src={Icon_profileSetting} alt=""  className='w-4 h-4' data-testid="profile-settings-icon"/>
             Profile Settings
           </Link>
         </li>
@@ -26,7 +26,7 @@ export const ProfileBar = () => {
         {/* Sign Out Link */}
         <li >
           <Link to="/profile" className="flex items-center gap-4 font-medium text-gray-800 no-underline font-Satoshi ">
-         <img src={Icon_profileSignout} alt=""  className='w-4 h-4'/>
+         <img src={Icon_profileSignout} alt=""  className='w-4 h-4'  data-testid="signout-icon" />
          Sign Out
           </Link>
         </li>

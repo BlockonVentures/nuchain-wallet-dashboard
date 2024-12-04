@@ -17,8 +17,6 @@ export const PersionalInfo = () => {
       </p>
    </section>
 
-
-   
       <form className="w-full space-y-[32px]">
         
         <div className="space-y-[30px]">
