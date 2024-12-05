@@ -6,14 +6,14 @@ import { ProfileBar } from "./pofilesectiontap/ProfileBar";
 // import { FaBell } from "react-icons/fa"; // For notification icon (use any icon library)
 
 const Navbar = () => {
-const[profile,setprofile]=useState(false)
+  const [profile, setprofile] = useState(false);
 
-  
   const { pathname } = useLocation();
   // Map of paths to page titles
   const pageTitles = {
     "/": "Main Dashboard",
     "/liquidity-pool": "Liquidity Pool Management",
+    "/transaction-management": "Transaction Management",
     // Add more routes and titles as needed
   };
 
@@ -22,12 +22,11 @@ const[profile,setprofile]=useState(false)
   const breadcrumb =
     pathname === "/" ? "Pages/Dashboard" : `Pages${pathname.replace("-", " ")}`;
 
-// function for profile
+  // function for profile
 
-function HandleImageClick(){
-  setprofile(!profile)
-}
-
+  function HandleImageClick() {
+    setprofile(!profile);
+  }
 
   return (
     <div className="flex flex-wrap items-center justify-between px-6 py-4">
@@ -77,22 +76,15 @@ function HandleImageClick(){
         </button>
 
         {/* Profile Image */}
-<button onClick={HandleImageClick}>
-<img
-          src="https://via.placeholder.com/40"
-          alt="Profile"
-          className="w-10 h-10 border-2 border-purple-500 rounded-full"
-        />
-</button>
+        <button onClick={HandleImageClick}>
+          <img
+            src="https://via.placeholder.com/40"
+            alt="Profile"
+            className="w-10 h-10 border-2 border-purple-500 rounded-full"
+          />
+        </button>
 
-
-<section >
-  {
-    profile && <ProfileBar/>
-  }
-</section>
-
-
+        <section>{profile && <ProfileBar />}</section>
       </div>
     </div>
   );
