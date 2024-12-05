@@ -2,6 +2,7 @@ import React from "react";
 import Arrow from "../assets/images/circular-arrow.png";
 import LiquidityPoolTransactionChart from "./Charts/BarChart/LiquidityPoolTransactionChart";
 import PoolTable from "./PoolTable";
+import TransactionsChart from "./Charts/PieChart/TransactionsChart";
 
 const LiquidityPoolManagement = () => {
   const transactionsData = [
@@ -132,9 +133,14 @@ const LiquidityPoolManagement = () => {
       {/* Charts */}
       <div className="grid grid-cols-1 gap-3">
         {/* Placeholder for chart */}
-
         <PoolTable transactions={transactionsData} />
-        <LiquidityPoolTransactionChart />
+        <div className="grid lg:grid-cols-[70%_30%] gap-2 lg:mr-2 ">
+          <LiquidityPoolTransactionChart />
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h3 className="mb-4 text-lg font-bold">Transactions</h3>
+            <TransactionsChart />
+          </div>
+        </div>
       </div>
     </div>
   );
