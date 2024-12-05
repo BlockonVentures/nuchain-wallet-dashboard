@@ -67,13 +67,20 @@ export const TransectionManageMent = () => {
 
   return (
 
-       <div className="container" data-testid="Transaction-Management">
+       <div className="container" data-testid="Transaction-Management rounded-2xl border-[1.1px] border-solid border-[#ECECEC]">
         
-       <div className="py-4 pr-5 overflow-auto bg-white rounded-md shadow-md pl-7">
+       <div className=" overflow-auto bg-[#FFFFFF] rounded-md shadow-md  mt-[23.09px] ml-[39.58px]" >
       <div className="flex justify-between mb-8">
-        <div className="text-[22px] font-bold text-[#1F2937] flex justify-center items-center">
-          Pool Creation and Configuration
-        </div>
+        <p className="text-[22px] font-bold text-[#1F2937] flex justify-center items-center">
+        Card Transaction History
+        </p>
+
+        <select name="All Time" id="">
+          <option value="">fhfg</option>
+          <option value="">fhfg</option>
+          <option value="">fhfg</option>
+          <option value="">fhfg</option>
+        </select>
       </div>
 
       <div className="overflow-x-auto border-0 table_scroll">
