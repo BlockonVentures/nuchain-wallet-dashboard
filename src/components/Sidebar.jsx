@@ -90,7 +90,7 @@ const Sidebar = () => {
             <span className="ml-1">User Management</span>
           </Link>
         </li>
-        <li className="text-[#6F7074] text-[11.25px] flex items-center rounded-lg cursor-pointer transition-all duration-200">
+        {/* <li className="text-[#6F7074] text-[11.25px] flex items-center rounded-lg cursor-pointer transition-all duration-200">
           <Link
             to="/payment"
             className={`flex items-center no-underline ${
@@ -104,7 +104,7 @@ const Sidebar = () => {
             </span>
             <span className="ml-1">Payment Gateway</span>
           </Link>
-        </li>
+        </li> */}
         <li className="text-[#6F7074] text-[11.25px] flex items-center  rounded-lg cursor-pointer transition-all duration-200">
           <Link
             to="/staking-pool"
