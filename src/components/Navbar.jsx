@@ -14,6 +14,10 @@ const Navbar = () => {
     "/": "Main Dashboard",
     "/liquidity-pool": "Liquidity Pool Management",
     "/transaction-management": "Transaction Management",
+     "/profile": "Profile Setting",
+     "/user-management": "User Management",
+     "/check-usermanagementData": "User Management",
+    
     // Add more routes and titles as needed
   };
 

@@ -7,6 +7,7 @@ import { TransectionManageMent } from "../../pages/TransectionManageMent";
 import { UserManagement } from "../../pages/UserManagement";
 import { Payment } from "../../pages/Payment";
 import { StackingPool } from "../../pages/StackingPool";
+import { CheckUSerManageMentData } from "../../components/CheckUSerManageMentData";
 
 const HomeRoutes = () => {
   return (
@@ -19,6 +20,8 @@ const HomeRoutes = () => {
           element={<TransectionManageMent/>}
         />
         <Route path="/user-management" element={<UserManagement/>} />
+        <Route path="/check-usermanagementData" element={<CheckUSerManageMentData/>} />
+
         <Route path="/payment" element={<Payment/>} />
 
         <Route path="/staking-pool" element={<StackingPool/>} />

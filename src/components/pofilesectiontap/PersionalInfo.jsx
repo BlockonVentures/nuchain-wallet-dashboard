@@ -4,9 +4,9 @@ export const PersionalInfo = () => {
 
 
   return (
-   <div className='px-8'>
+   <div className='!px-2 sm:!px-8'>
     
-     <div className="bg-white shadow-md rounded-[20px] py-4 px-3 sm:py-8 sm:px-9">
+     <div className="bg-white shadow-md rounded-[20px] py-4 px-3 sm:py-8 sm:px-9 ">
 
         
      <div className='flex flex-col justify-between gap-5 md:flex-row '>

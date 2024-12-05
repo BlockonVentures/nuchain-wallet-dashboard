@@ -10,6 +10,7 @@ import { Payment } from "../pages/Payment";
 import { StackingPool } from "../pages/StackingPool";
 import { UserManagement } from "../pages/UserManagement";
 import { TransectionManageMent } from "../pages/TransectionManageMent";
+import { CheckUSerManageMentData } from "../components/CheckUSerManageMentData";
 
 
 
@@ -23,6 +24,7 @@ const routeData = [
   { path: "/staking-pool", element: <StackingPool/>, testId: "Stacking-pool" },
   { path: "/payment", element: <Payment/>, testId: "payment" },
   { path: "/user-management", element: <UserManagement/>, testId: "user-ManageMent" },
+  { path: "/check-usermanagementData", element: <CheckUSerManageMentData/>, testId: "checkuserManagemantData" },
 ];
 
 describe("AuthRoutes", () => {

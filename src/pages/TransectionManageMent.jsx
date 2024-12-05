@@ -103,7 +103,7 @@ export const TransectionManageMent = () => {
   return (
     <div
       className="container"
-      data-testid="Transaction-Management rounded-2xl border-[1.1px] border-solid border-[#ECECEC]"
+      data-testid="Transaction-Management "
     >
       <CardTransactionHistory transactions={transactions} />
 
