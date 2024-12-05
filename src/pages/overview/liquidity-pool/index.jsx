@@ -7,6 +7,7 @@ import ExchangeRateChart from "../../../components/Charts/AreaChart/ExchangeRate
 import Sidebar from "../../../components/Sidebar";
 import Navbar from "../../../components/Navbar";
 import Dashboard from "../../../components/Dashboard";
+import LiquidityPoolManagement from "../../../components/LiquidityPoolManagement";
 
 const LiquidityPool = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const LiquidityPool = () => {
     return <p>Data not available</p>;
   }
 
-  return <>ddd</>;
+  return <LiquidityPoolManagement />;
 };
 
 export default LiquidityPool;

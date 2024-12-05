@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 import { useSelector } from "react-redux";
 
-const LiquidityPoolChart = () => {
+const TransactionsChart = () => {
   const { analytics, loading, error } = useSelector((state) => state.analytics);
 
   const pieSeries = analytics?.staking_pool
@@ -13,7 +13,7 @@ const LiquidityPoolChart = () => {
       ]
     : [];
 
-  const pieLabels = ["ETH", "BTC", "BNB", "SOL", "ADA", "XRP", "ATOM", "DOGE"];
+  const pieLabels = ["ETH", "BTC", "BNB", "SOL", "ADA", "XRP"];
   //   Object.keys(analytics?.staking_pool); // Labels for the pie chart
 
   // Options for the Pie Chart
@@ -39,7 +39,7 @@ const LiquidityPoolChart = () => {
     ],
     colors: ["#C7329F", "#8712C2", "#872168"], // Customize the colors
     legend: {
-      show: false,
+      // show: false,
       position: "right", // Position of the legend
       fontSize: "9px",
     },
@@ -62,4 +62,4 @@ const LiquidityPoolChart = () => {
   );
 };
 
-export default LiquidityPoolChart;
+export default TransactionsChart;

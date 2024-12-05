@@ -1,14 +1,7 @@
-import React from "react";
 import Logo from "../assets/images/Logo.png";
-import home from "../assets/images/home.png";
-import liquidityPool from "../assets/images/liquidity-pool.svg";
 import LiquidityPoolImage from "../assets/components/LiquidityPoolImage";
 import paymentGateway from "../assets/images/payment-gateway.png";
 import profile from "../assets/images/profile.png";
-import stakingPool from "../assets/images/staking-pool.png";
-import transactionManagement from "../assets/images/transaction-management.png";
-import userManagement from "../assets/images/user-management.png";
-import Dashboard from "../components/Dashboard";
 import { Link, useLocation } from "react-router-dom";
 import DashboardIcon from "../assets/components/DashboardIcon";
 import TransactionManagementIcon from "../assets/components/TransactionManagementIcon";
@@ -16,46 +9,17 @@ import UserManagementIcon from "../assets/components/UserManagementIcon";
 import StakingIcon from "../assets/components/StakingIcon";
 
 const Sidebar = () => {
-  // const [activeComponent, setActiveComponent] = useState("Dashboard");
-
-  // const LiquidityPool = () => <div>Liquidity Pool Content</div>;
-  // const TransactionManagement = () => <div>Transaction Management Content</div>;
-  // const UserManagement = () => <div>User Management Content</div>;
-  // const PaymentGateway = () => <div>Payment Gateway Content</div>;
-  // const StakingPool = () => <div>Staking Pool Content</div>;
-  // const Profile = () => <div>Profile Content</div>;
-
-  // const renderComponent = () => {
-  //   switch (activeComponent) {
-  //     case "Dashboard":
-  //       return <Dashboard />;
-  //     case "LiquidityPool":
-  //       return <LiquidityPool />;
-  //     case "TransactionManagement":
-  //       return <TransactionManagement />;
-  //     case "UserManagement":
-  //       return <UserManagement />;
-  //     case "PaymentGateway":
-  //       return <PaymentGateway />;
-  //     case "StakingPool":
-  //       return <StakingPool />;
-  //     case "Profile":
-  //       return <Profile />;
-  //     default:
-  //       return <Dashboard />;
-  //   }
-  // };
   const location = useLocation();
 
   return (
-    <div className="hidden sm:block w-[26%] bg-white shadow-lg h-screen">
+    <div className="hidden sm:block w-[26%] max-w-[250px] bg-white shadow-lg h-screen">
       {/* Logo Section */}
-      <div className="p-4 flex items-center mb-7">
-        <img src={Logo} alt="logo" className="h-12 w-auto" />
+      <div className="flex items-center p-4 mb-7">
+        <img src={Logo} alt="logo" className="w-auto h-12" />
       </div>
 
       {/* Navigation Menu */}
-      <ul className="space-y-6 pl-0 px-4">
+      <ul className="px-4 pl-0 space-y-6">
         <li className="text-[#6F7074] text-[11.25px] flex items-center rounded-lg cursor-pointer transition-all duration-200">
           <Link
             to="/"
@@ -81,7 +45,7 @@ const Sidebar = () => {
                 : "text-[#6F7074]"
             }`}
           >
-            <span className="w-5 h-5	">
+            <span className="w-5 h-5 ">
               <LiquidityPoolImage
                 fill={location.pathname === "/liquidity-pool" ? true : false}
               />
@@ -126,7 +90,7 @@ const Sidebar = () => {
             <span className="ml-1">User Management</span>
           </Link>
         </li>
-        <li className="text-[#6F7074] text-[11.25px] flex items-center rounded-lg cursor-pointer transition-all duration-200">
+        {/* <li className="text-[#6F7074] text-[11.25px] flex items-center rounded-lg cursor-pointer transition-all duration-200">
           <Link
             to="/payment"
             className={`flex items-center no-underline ${
@@ -140,7 +104,7 @@ const Sidebar = () => {
             </span>
             <span className="ml-1">Payment Gateway</span>
           </Link>
-        </li>
+        </li> */}
         <li className="text-[#6F7074] text-[11.25px] flex items-center  rounded-lg cursor-pointer transition-all duration-200">
           <Link
             to="/staking-pool"

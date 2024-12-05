@@ -11,9 +11,9 @@ const CardHistory = () => {
   ];
 
   return (
-    <div className="bg-white shadow-lg py-4 px-3 rounded-lg w-full max-w-md">
+    <div className="w-full max-w-md px-3 py-4 bg-white rounded-lg shadow-lg">
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-gray-800">Card History</h3>
         <button className="text-[9px]  p-2 rounded-full text-[#718096] bg-[#F3F4F6]">
           See All
@@ -21,7 +21,7 @@ const CardHistory = () => {
       </div>
 
       {/* Card List */}
-      <div className=" h-60 overflow-y-auto px-2">
+      <div className="px-2 overflow-y-auto h-60">
         {cards.map((card, index) => (
           <div
             key={index}
@@ -32,11 +32,11 @@ const CardHistory = () => {
             `}
           >
             <div>
-              <div className="font-bold text-gray-800 text-xs pb-1">
+              <div className="pb-1 text-xs font-bold text-gray-800">
                 {card.id}
               </div>
               {/* <div>1</div> */}
-              <div className={`text-[9px] text-[#C7329F]`}>{card.id}</div>
+              <div className={`text-[9px] text-[#C7329F]`} data-testid={card.id} >{card.id}</div>
             </div>
             <div className="text-[10.5px] font-bold text-gray-800">
               {card.amount}

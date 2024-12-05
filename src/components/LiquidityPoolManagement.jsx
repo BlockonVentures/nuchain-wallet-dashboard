@@ -1,15 +1,10 @@
 import React from "react";
 import Arrow from "../assets/images/circular-arrow.png";
-import UserRegistrationChart from "./Charts/AreaChart/UserRegistrationChart";
-import ExchangeRateChart from "./Charts/AreaChart/ExchangeRateChart";
-import TransactionVolumeChart from "./Charts/BarChart/TransactionVolumeChart";
-import CardHistory from "./Charts/CardHistory";
-import TransactionTable from "./TransactionTable";
-import LiquidityPoolChart from "./Charts/PieChart/LiquidityPoolChart";
-import StakingPoolChart from "./Charts/PieChart/StakingPoolChart";
-import PoolStatusCard from "./PoolStatusCard";
+import LiquidityPoolTransactionChart from "./Charts/BarChart/LiquidityPoolTransactionChart";
+import PoolTable from "./PoolTable";
+import TransactionsChart from "./Charts/PieChart/TransactionsChart";
 
-const Dashboard = () => {
+const LiquidityPoolManagement = () => {
   const transactionsData = [
     {
       id: "TX12345",
@@ -50,7 +45,54 @@ const Dashboard = () => {
           {/* Text */}
           <div className="ml-2">
             <div className="text-gray-500 text-[10.5px]">
-              Total USDN Circulation
+              Total Value Locked
+            </div>
+            <p className="mb-0 text-lg font-bold">3504</p>
+          </div>
+        </div>
+        <div className="flex items-center p-2 bg-white rounded-lg shadow-md ">
+          {/* Image */}
+          <div className="flex justify-center items-center w-[42px] h-[42px] bg-purple-100 rounded-full flex-shrink-0">
+            <img
+              src={Arrow}
+              alt="Circulation Icon"
+              className="h-[18px] w-[18px] " // Properly constrain image size
+            />
+          </div>
+          {/* Text */}
+          <div className="ml-2">
+            <div className="text-gray-500 text-[10.5px]">Pool Balance</div>
+            <p className="mb-0 text-lg font-bold">3504</p>
+          </div>
+        </div>
+        <div className="flex items-center p-2 bg-white rounded-lg shadow-md ">
+          {/* Image */}
+          <div className="flex justify-center items-center w-[42px] h-[42px] bg-purple-100 rounded-full flex-shrink-0">
+            <img
+              src={Arrow}
+              alt="Circulation Icon"
+              className="h-[18px] w-[18px] " // Properly constrain image size
+            />
+          </div>
+          {/* Text */}
+          <div className="ml-2">
+            <div className="text-gray-500 text-[10.5px]">Liquid Providers</div>
+            <p className="mb-0 text-lg font-bold">3504</p>
+          </div>
+        </div>
+        <div className="flex items-center p-2 bg-white rounded-lg shadow-md ">
+          {/* Image */}
+          <div className="flex justify-center items-center w-[42px] h-[42px] bg-purple-100 rounded-full flex-shrink-0">
+            <img
+              src={Arrow}
+              alt="Circulation Icon"
+              className="h-[18px] w-[18px] " // Properly constrain image size
+            />
+          </div>
+          {/* Text */}
+          <div className="ml-2">
+            <div className="text-gray-500 text-[10.5px]">
+              Pool Utilization Rate
             </div>
             <p className="mb-0 text-lg font-bold">3504</p>
           </div>
@@ -67,58 +109,7 @@ const Dashboard = () => {
           {/* Text */}
           <div className="ml-2">
             <div className="text-gray-500 text-[10.5px]">
-              Total USDN Circulation
-            </div>
-            <p className="mb-0 text-lg font-bold">3504</p>
-          </div>
-        </div>
-        <div className="flex items-center p-2 bg-white rounded-lg shadow-md ">
-          {/* Image */}
-          <div className="flex justify-center items-center w-[42px] h-[42px] bg-purple-100 rounded-full flex-shrink-0">
-            <img
-              src={Arrow}
-              alt="Circulation Icon"
-              className="h-[18px] w-[18px] " // Properly constrain image size
-            />
-          </div>
-          {/* Text */}
-          <div className="ml-2">
-            <div className="text-gray-500 text-[10.5px]">
-              Total USDN Circulation
-            </div>
-            <p className="mb-0 text-lg font-bold">3504</p>
-          </div>
-        </div>
-        <div className="flex items-center p-2 bg-white rounded-lg shadow-md ">
-          {/* Image */}
-          <div className="flex justify-center items-center w-[42px] h-[42px] bg-purple-100 rounded-full flex-shrink-0">
-            <img
-              src={Arrow}
-              alt="Circulation Icon"
-              className="h-[18px] w-[18px] " // Properly constrain image size
-            />
-          </div>
-          {/* Text */}
-          <div className="ml-2">
-            <div className="text-gray-500 text-[10.5px]">
-              Total USDN Circulation
-            </div>
-            <p className="mb-0 text-lg font-bold">3504</p>
-          </div>
-        </div>
-        <div className="flex items-center p-2 bg-white rounded-lg shadow-md ">
-          {/* Image */}
-          <div className="flex justify-center items-center w-[42px] h-[42px] bg-purple-100 rounded-full flex-shrink-0">
-            <img
-              src={Arrow}
-              alt="Circulation Icon"
-              className="h-[18px] w-[18px] " // Properly constrain image size
-            />
-          </div>
-          {/* Text */}
-          <div className="ml-2">
-            <div className="text-gray-500 text-[10.5px]">
-              Total USDN Circulation
+              Real Time Transaction
             </div>
             <p className="mb-0 text-lg font-bold">3504</p>
           </div>
@@ -134,64 +125,25 @@ const Dashboard = () => {
           </div>
           {/* Text */}
           <div className="ml-2">
-            <div className="text-gray-500 text-[10.5px]">
-              Total USDN Circulation
-            </div>
+            <div className="text-gray-500 text-[10.5px]">Active Swap Rate</div>
             <p className="mb-0 text-lg font-bold">3504</p>
           </div>
         </div>
       </div>
       {/* Charts */}
-      <div className="grid gap-3 xl:grid-cols-2">
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <h3 className="mb-4 text-lg font-bold">
-            New User Registration Trends
-          </h3>
-          {/* Placeholder for chart */}
-          <div className="bg-gray-100 rounded-lg">
-            <UserRegistrationChart />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {/* <div className="p-6 bg-white rounded-lg shadow-md"> */}
-          <TransactionVolumeChart />
-          {/* </div> */}
-          <CardHistory />
-        </div>
-      </div>
-
-      <div className="grid gap-3 lg:grid-cols-2">
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <h3 className="mb-4 text-lg font-bold">Exchange Rate Trends</h3>
-          {/* <h3 className="mb-4 text-lg font-bold">Exchange Rate Trends</h3> */}
-          {/* Placeholder for chart */}
-          <div className="bg-gray-100 rounded-lg ">
-            <ExchangeRateChart />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3">
+        {/* Placeholder for chart */}
+        <PoolTable transactions={transactionsData} />
+        <div className="grid lg:grid-cols-[70%_30%] gap-2 lg:mr-2 ">
+          <LiquidityPoolTransactionChart />
           <div className="p-6 bg-white rounded-lg shadow-md">
-            <h3 className="mb-4 text-lg font-bold">Liquidity Pool</h3>
-            <LiquidityPoolChart />
-          </div>
-          <div className="p-4 bg-white rounded-lg shadow-md">
-            <h3 className="mb-4 text-lg font-bold">Staking Pool Statistics</h3>
-            <StakingPoolChart />
+            <h3 className="mb-4 text-lg font-bold">Transactions</h3>
+            <TransactionsChart />
           </div>
         </div>
-      </div>
-
-      <div className="grid  lg:grid-cols-[70%_28%] md gap-4 mb-4">
-        <TransactionTable transactions={transactionsData} />
-
-        {/* <div className="grid grid-cols-1 gap-6 lg:grid-cols-1"> */}
-        {/* <div className="p-6 bg-white rounded-lg shadow-md"> */}
-        <PoolStatusCard />
-        {/* </div> */}
-        {/* </div> */}
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default LiquidityPoolManagement;
