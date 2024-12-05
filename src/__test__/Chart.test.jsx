@@ -286,7 +286,7 @@ describe("LiquidityPoolChartManageMent",()=>{
       expect(valueElements).toHaveLength(6);
     });
 
-test('correct')
+
 
 
 

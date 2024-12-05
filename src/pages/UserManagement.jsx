@@ -4,6 +4,7 @@ import search_userManageMent from '../../src/assets/images/search_userManageMent
 import export_userManagement from '../../src/assets/images/export_userManagement.png'
 
 import { Pagination_User_manageMent } from '../components/Pagination_User_manageMent';
+import { Link } from 'react-router-dom';
 
 
 export const UserManagement = () => {
@@ -80,7 +81,7 @@ export const UserManagement = () => {
 
  
   // table head
-  const classname="font-Poppins  font-semibold	text-[#000000] leading-[14.71px] pb-3 text-[8.41px]"
+  const classname="font-Poppins  font-semibold	text-[#000000] leading-[14.71px] pb-3 text-[8.41px] pr-4 text-left"
 
 
   return (
@@ -107,7 +108,7 @@ export const UserManagement = () => {
 
 
         {/* Search and Actions */}
- <div className="flex flex-col items-center justify-between mb-8 sm:flex-row mt-[55px]">
+ <div className="flex flex-col items-center justify-between mb-8 sm:flex-row mt-[30px] pl-7">
 
      {/* search  */}
      <div className="flex items-center pl-2 border-2 rounded-md w-60 ">
@@ -136,7 +137,7 @@ export const UserManagement = () => {
 
 
 {/* table */}
-        <div className="overflow-x-auto rounded-[6px] border-2 border-solid border-red-300">
+        <div className="overflow-x-auto rounded-[6px] pl-7">
           <table className="w-full text-center ">
             <thead >
               <tr>
@@ -153,21 +154,23 @@ export const UserManagement = () => {
             <tbody>
               {currentItems.map((user, index) => (
                 <tr key={index} className="hover:bg-gray-50" >
-                  <td className="font-medium	font-Poppins text-[10.5px] leading-[14.71px] text-[#000000]">{user.walletAddress}</td>
-                  <td className="font-medium	font-Poppins text-[9px] leading-[14.71px] text-[#A1247C] py-1.5 px-2 rounded-md"  data-testid={`user-ManageMenttt-${index}`}>{user.cardNumber}</td>
-                  <td className="font-normal	font-Poppins text-[8.41px] leading-[14.71px] text-[#000000] ">{user.stakingAmount}</td>
-                  <td className="font-normal	font-Poppins text-[8.41px] leading-[14.71px] text-[#000000] ">{user.rewards}</td>
-                  <td className="font-normal	font-Poppins text-[8.41px] leading-[14.71px] text-[#000000] ">{user.stakedOn}</td>
-                  <td className="font-normal	font-Poppins text-[8.41px] leading-[14.71px] text-[#000000] ">{user.lastLogin}</td>
+                  <td className="font-medium	font-Poppins text-[10.5px] pr-4 text-left leading-[14.71px] text-[#000000]">{user.walletAddress}</td>
+                  <td className="font-medium	font-Poppins text-[9px] leading-[14.71px] text-[#A1247C] py-1.5 pr-4 text-left rounded-md"  data-testid={`user-ManageMenttt-${index}`}>{user.cardNumber}</td>
+                  <td className="font-normal	font-Poppins text-[8.41px] leading-[14.71px] text-[#000000] pr-4 text-left">{user.stakingAmount}</td>
+                  <td className="font-normal	font-Poppins text-[8.41px] leading-[14.71px] text-[#000000] pr-4 text-left">{user.rewards}</td>
+                  <td className="font-normal	font-Poppins text-[8.41px] leading-[14.71px] text-[#000000] pr-4 text-left">{user.stakedOn}</td>
+                  <td className="font-normal	font-Poppins text-[8.41px] leading-[14.71px] text-[#000000] pr-4 text-left">{user.lastLogin}</td>
                   <td
-                  className={`font-normal font-Poppins text-[8.41px] leading-[14.71px] ${
+                  className={`font-normal font-Poppins text-[8.41px] leading-[14.71px] pr-4 text-left ${
                     user.status === 'Active' ? 'text-[#0AF414]' : 'text-[#EB6825]'
                   }`}
                   >
                     {user.status}
                   </td>
-                  <td className="font-medium	font-Poppins text-[9px] leading-[14.71px] text-[#4E2C9E] ">
-                    Check
+                  <td className="font-medium	font-Poppins text-[9px] leading-[14.71px] text-[#4E2C9E] pr-4 text-left">
+                   <Link to="/check-usermanagementData">
+                   Check
+                   </Link>
                   </td>
                 </tr>
               ))}
