@@ -3,11 +3,7 @@ import Home from "../../pages/overview/home/Home";
 import HomeLayout from "../layouts/HomeLayout";
 import LiquidityPool from "../../pages/overview/liquidity-pool";
 import { PersionalInfo } from "../../components/pofilesectiontap/PersionalInfo";
-import { TransectionManageMent } from "../../pages/TransectionManageMent";
-import { UserManagement } from "../../pages/UserManagement";
-import { Payment } from "../../pages/Payment";
-import { StackingPool } from "../../pages/StackingPool";
-import { CheckUSerManageMentData } from "../../components/CheckUSerManageMentData";
+import { AddUser } from "../../pages/AddUser";
 
 const HomeRoutes = () => {
   return (
@@ -17,16 +13,14 @@ const HomeRoutes = () => {
         <Route path="/liquidity-pool" element={<LiquidityPool />} />
         <Route
           path="/transaction-management"
-          element={<TransectionManageMent/>}
+          element={<>Transaction Management</>}
         />
-        <Route path="/user-management" element={<UserManagement/>} />
-        <Route path="/check-usermanagementData" element={<CheckUSerManageMentData/>} />
-
-        <Route path="/payment" element={<Payment/>} />
-
-        <Route path="/staking-pool" element={<StackingPool/>} />
+        <Route path="/user-management" element={<>User Management</>} />
+        <Route path="/payment" element={<>Payment</>} />
+        <Route path="/staking-pool" element={<>Staking Pool</>} />
 
         <Route path="/profile" element={<PersionalInfo />} />
+        <Route path="/profile/add-user" element={<AddUser />} />
         {/* <Route path="/not-found" element={<NotFound />} />
         <Route path="/network-error" element={<NetworkError />} />
       

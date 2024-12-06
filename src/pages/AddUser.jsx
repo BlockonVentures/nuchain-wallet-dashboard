@@ -1,7 +1,7 @@
 import React from "react";
-import { PersonalInfoForm } from "./PersonalInfoForm";
+import { PersonalInfoForm } from "../components/pofilesectiontap/PersonalInfoForm";
 
-export const PersionalInfo = () => {
+export const AddUser = () => {
   const handleSave = () => alert("Save Changes");
   const handleCancel = () => alert("Cancel Changes");
   return (
@@ -111,7 +111,7 @@ export const PersionalInfo = () => {
     //   </div>
     // </div>
     <PersonalInfoForm
-      role="Admin"
+      role="User"
       onSave={handleSave}
       onCancel={handleCancel}
       showAddUser={true}
