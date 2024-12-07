@@ -5,7 +5,6 @@ import LiquidityPool from "../../pages/overview/liquidity-pool";
 import { PersionalInfo } from "../../components/pofilesectiontap/PersionalInfo";
 import { TransectionManageMent } from "../../pages/TransectionManageMent";
 import { UserManagement } from "../../pages/UserManagement";
-import { Payment } from "../../pages/Payment";
 import { CheckUSerManageMentData } from "../../components/CheckUSerManageMentData";
 import { AddUser } from "../../pages/AddUser";
 
@@ -25,7 +24,7 @@ const HomeRoutes = () => {
           element={<CheckUSerManageMentData />}
         />
 
-        <Route path="/payment" element={<Payment />} />
+       
 
         <Route path="/profile" element={<PersionalInfo />} />
         <Route path="/profile/add-user" element={<AddUser />} />

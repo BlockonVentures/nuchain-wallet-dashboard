@@ -4,7 +4,7 @@ import icon_loginEmail from "../../assets/images/icon_loginEmail.png";
 import { Link } from 'react-router-dom';
 export const GetEmailForOtp = () => {
   return (
-    <div className="flex items-center justify-center h-screen !p-2 sm:!p-4">
+    <div className="flex items-center justify-center h-screen !p-2 sm:!p-4" data-testid="enterEmailForgotPassword">
   
     <div
       className="flex items-center justify-center w-full h-full  !p-2 bg-no-repeat bg-cover sm:!p-3 rounded-3xl"

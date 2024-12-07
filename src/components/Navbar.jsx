@@ -3,7 +3,6 @@ import Notifications from "../assets/images/notifications.png";
 import Dnd from "../assets/images/dnd.png";
 import { useLocation } from "react-router-dom";
 import { ProfileBar } from "./pofilesectiontap/ProfileBar";
-// import { FaBell } from "react-icons/fa"; // For notification icon (use any icon library)
 
 const Navbar = () => {
   const [profile, setprofile] = useState(false);
@@ -15,6 +14,7 @@ const Navbar = () => {
     "/liquidity-pool": "Liquidity Pool Management",
     "/transaction-management": "Transaction Management",
      "/profile": "Profile Setting",
+     "/profile/add-user": "Profile Setting",
      "/user-management": "User Management",
      "/check-usermanagementData": "User Management",
     

@@ -6,7 +6,7 @@ export const PersonalInfoForm = ({ role }) => {
   console.log("role", role);
   const navigate = useNavigate();
   return (
-    <div className="px-4 ">
+    <div className="!px-2 sm:!px-4" data-testid={`${role === 'Admin' ? "AdminProfileForm" : "addUserFrom"}`}>
       <div className="bg-white shadow-lg rounded-[10px] py-8 px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
         {/* Left Section */}
         <div className="lg:w-1/3">
@@ -33,7 +33,7 @@ export const PersonalInfoForm = ({ role }) => {
                 type="text"
                 id="first-name"
                 placeholder="Lark William"
-                className="w-full px-4 py-3 border border-[#E5E7EB] rounded-md text-sm sm:text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] focus:outline-none"
+                className="w-full !px-2 !py-1 sm:!px-4 sm:!py-3 border border-[#E5E7EB] rounded-md !text-sm sm:!text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] focus:outline-none"
               />
             </div>
 
@@ -49,7 +49,7 @@ export const PersonalInfoForm = ({ role }) => {
                 type="text"
                 id="last-name"
                 placeholder="Lark William"
-                className="w-full px-4 py-3 border border-[#E5E7EB] rounded-md text-sm sm:text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] focus:outline-none"
+                className="w-full !px-2 !py-1 sm:!px-4 sm:!py-3 border border-[#E5E7EB] rounded-md !text-sm sm:!text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] focus:outline-none"
               />
             </div>
 
@@ -65,7 +65,7 @@ export const PersonalInfoForm = ({ role }) => {
                 type="email"
                 id="email"
                 placeholder="abc@gmail.com"
-                className="w-full px-4 py-3 border border-[#E5E7EB] rounded-md text-sm sm:text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] focus:outline-none"
+                className="w-full !px-2 !py-1 sm:!px-4 sm:!py-3 border border-[#E5E7EB] rounded-md !text-sm sm:!text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] focus:outline-none"
               />
             </div>
 
@@ -81,24 +81,27 @@ export const PersonalInfoForm = ({ role }) => {
                 type="tel"
                 id="mobile"
                 placeholder="+91 918989898"
-                className="w-full px-4 py-3 border border-[#E5E7EB] rounded-md text-sm sm:text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] focus:outline-none"
+                className="w-full !px-2 !py-1 sm:!px-4 sm:!py-3 border border-[#E5E7EB] rounded-md !text-sm sm:!text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] focus:outline-none"
               />
             </div>
 
             {/* Role Section */}
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <label className="block text-sm sm:text-base font-semibold text-[#15162B]">
+            <div className="flex items-center justify-between">
+              <div className={`${ role === 'Admin' ? 'flex items-center justify-between' : 'w-full'   }`}>
+                <label className="block text-sm pr-1 sm:text-base font-semibold text-[#15162B]">
                   Role
                 </label>
-                <p className="text-sm sm:text-base text-[#15162B] mb-0">
+                <p className="text-sm sm:text-base text-[#15162B] mb-0 ">
                   {role === "User" ? (
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="Manager"
-                      className="w-full px-2 py-3  text-sm sm:text-base text-[#15162B] placeholder-[#868686]  focus:outline-none"
-                    />
+                    <select
+                      name=""
+                      id=""
+                      className="w-full !px-2 !py-1 sm:!px-4 sm:!py-3 border border-[#E5E7EB] rounded-md !text-sm sm:!text-base text-[#15162B] placeholder-[#868686] focus:ring-2 focus:ring-[#15162B] "
+                    >
+                      {" "}
+                      <option value="Manager">Manager</option>{" "}
+                      <option value="Executive">Executive</option>{" "}
+                    </select>
                   ) : (
                     "Admin"
                   )}
@@ -108,7 +111,7 @@ export const PersonalInfoForm = ({ role }) => {
               {role === "Admin" && (
                 <button
                   type="button"
-                  className="bg-[#15162B] text-white px-4 py-2 rounded-lg text-sm sm:text-base hover:bg-opacity-90"
+                  className="bg-[#15162B] text-white px-2 py-1 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-base xs:text-sm hover:bg-opacity-90"
                   onClick={() => navigate("/profile/add-user")}
                 >
                   Add New User
@@ -126,7 +129,7 @@ export const PersonalInfoForm = ({ role }) => {
               </div>
               <button
                 type="button"
-                className="text-sm sm:text-base text-blue-500 underline hover:text-blue-700"
+                className="text-sm text-blue-500 underline sm:text-base hover:text-blue-700"
               >
                 <i className="fas fa-pen"></i>
               </button>
@@ -136,13 +139,13 @@ export const PersonalInfoForm = ({ role }) => {
             <div className="flex gap-4">
               <button
                 type="submit"
-                className="bg-[#15162B] text-white px-6 py-2 rounded-lg text-sm sm:text-base hover:bg-opacity-90"
+                className="bg-[#15162B] text-white px-2 py-1 sm:px-4 sm:py-2  rounded-lg text-xs sm:text-base xs:text-sm hover:bg-opacity-90"
               >
                 Save Changes
               </button>
               <button
                 type="button"
-                className="text-sm sm:text-base text-[#868686] hover:underline"
+                className="text-xs sm:text-base xs:text-sm text-[#868686] hover:underline"
               >
                 Cancel
               </button>

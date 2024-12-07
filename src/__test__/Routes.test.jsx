@@ -2,43 +2,52 @@
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { describe, expect, test } from "vitest";
 import HomeLayout from "../base/layouts/HomeLayout";
-import { Signin } from "../pages/Signin";
-import { SignUp } from "../pages/SignUp";
-import { SignInOtp } from "../pages/SignInOtp";
-import { SignUpOtp } from "../pages/SignUpOtp";
-import { Payment } from "../pages/Payment";
-import { UserManagement } from "../pages/UserManagement";
-import { TransectionManageMent } from "../pages/TransectionManageMent";
-import { CheckUSerManageMentData } from "../components/CheckUSerManageMentData";
-
-
+import AppRoutes from "../base/routes/AppRoutes";
 
 
 const routeData = [
-  { path: "/sign-in", element: <Signin/>, testId: "Signin" },
-  { path: "/sign-up", element: <SignUp/>, testId: "SignUp" },
-  { path: "/sign-in/otp", element: <SignInOtp/>, testId: "SignInOtp" },
-  { path: "/sign-up/otp", element: <SignUpOtp/>, testId: "SignUpOtp" },
-  { path: "/transaction-management", element: <TransectionManageMent/>, testId: "Transaction-Management" },
-  { path: "/payment", element: <Payment/>, testId: "payment" },
-  { path: "/user-management", element: <UserManagement/>, testId: "user-ManageMent" },
-  { path: "/check-usermanagementData", element: <CheckUSerManageMentData/>, testId: "checkuserManagemantData" },
+  { path: "/auth/sign-in", testId: "Signin",shouldPass: true },
+  { path: "/auth/sign-up",  testId: "SignUp",shouldPass: true },
+  { path: "/auth/sign-in/otp", testId: "SignInOtp",shouldPass: true },
+  { path: "/auth/sign-up/otp",  testId: "SignUpOtp",shouldPass: true },
+  { path: "/transaction-management",  testId: "Transaction_Management" , shouldPass: true },
+  { path: "/user-management",  testId: "user-ManageMent",shouldPass: true },
+  { path: "/check-usermanagementData",  testId: "checkuserManagemantData",shouldPass: true },
+
+  { path: "/auth/addEmail-otp",  testId: "enterEmailForgotPassword",shouldPass: true },
+  { path: "/auth/password-reCreate",  testId: "AuthPasswordRecreate",shouldPass: true },
+  { path: "/profile/add-user",  testId: "addUserFrom",shouldPass: true },
+  { path: "/profile",  testId: "AdminProfileForm",shouldPass: true },
+
 ];
 
+
+
+
+
 describe("AuthRoutes", () => {
-  routeData.forEach(({ path, testId }) => {
-    test(`renders the correct component for route: ${path} with testId: ${testId}`, () => {
+
+
+
+  routeData.forEach(({ path, testId, shouldPass }) => {
+    test(`Navigates to ${path} and expects ${shouldPass ? "success" : "failure"}`, () => {
       render(
         <MemoryRouter initialEntries={[path]}>
-          <Routes>
-            <Route path="/" element={<HomeLayout />} />
-            <Route path={path} element={routeData.find(r => r.path === path)?.element} />
-          </Routes>
+          <AppRoutes/>
         </MemoryRouter>
       );
-      expect(screen.getByTestId(testId)).toBeInTheDocument();
+
+      const element = screen.queryByTestId(testId);
+      if (shouldPass) {
+        expect(element).toBeInTheDocument();
+      } else {
+        expect(element).not.toBeInTheDocument();
+      }
     });
   });
+
+
+
 
   test("renders HomeLayout for / route", () => {
     render(
