@@ -1,12 +1,11 @@
 import Logo from "../assets/images/Logo.png";
 import LiquidityPoolImage from "../assets/components/LiquidityPoolImage";
-import paymentGateway from "../assets/images/payment-gateway.png";
 import profile from "../assets/images/profile.png";
 import { Link, useLocation } from "react-router-dom";
 import DashboardIcon from "../assets/components/DashboardIcon";
 import TransactionManagementIcon from "../assets/components/TransactionManagementIcon";
 import UserManagementIcon from "../assets/components/UserManagementIcon";
-import StakingIcon from "../assets/components/StakingIcon";
+
 
 const Sidebar = () => {
   const location = useLocation();
@@ -105,23 +104,6 @@ const Sidebar = () => {
             <span className="ml-1">Payment Gateway</span>
           </Link>
         </li> */}
-        <li className="text-[#6F7074] text-[11.25px] flex items-center  rounded-lg cursor-pointer transition-all duration-200">
-          <Link
-            to="/staking-pool"
-            className={`flex items-center no-underline ${
-              location.pathname === "/staking-pool"
-                ? "text-[#8712C2] font-bold"
-                : "text-[#6F7074]"
-            }`}
-          >
-            <span className="w-5 h-5 ">
-              <StakingIcon
-                fill={location.pathname === "/staking-pool" ? true : false}
-              />
-            </span>
-            <span className="ml-1">Staking Pool</span>
-          </Link>
-        </li>
         <li className="text-[#6F7074] text-[11.25px] flex items-center  rounded-lg cursor-pointer transition-all duration-200">
           <Link
             to="/profile"

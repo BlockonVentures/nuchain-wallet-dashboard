@@ -2,6 +2,7 @@ import React from "react";
 import login_background from "../assets/images/signup_background.jpeg";
 import icon_loginEmail from "../assets/images/Icon_loginEmail.png";
 import lock_LoginPassword from "../assets/images/lock_LoginPassword.png";
+import { Link } from "react-router-dom";
 
 
 export const Signin = () => {
@@ -57,9 +58,9 @@ export const Signin = () => {
             <input type="checkbox" className="w-4 h-4 mt-[4.23px] ml-[4.23px] border-[2.54px] text-[#FFFFFF]" />
             Remember Me
           </label>
-          <a href="#" className="text-sm text-indigo-600 hover:underline">
+          <Link to="/auth/addEmail-otp" className="text-sm text-indigo-600 hover:underline">
             Forgot Password?
-          </a>
+          </Link>
         </div>
       </div>
 

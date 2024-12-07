@@ -6,7 +6,6 @@ import { PersionalInfo } from "../../components/pofilesectiontap/PersionalInfo";
 import { TransectionManageMent } from "../../pages/TransectionManageMent";
 import { UserManagement } from "../../pages/UserManagement";
 import { Payment } from "../../pages/Payment";
-import { StackingPool } from "../../pages/StackingPool";
 import { CheckUSerManageMentData } from "../../components/CheckUSerManageMentData";
 
 const HomeRoutes = () => {
@@ -26,8 +25,6 @@ const HomeRoutes = () => {
         />
 
         <Route path="/payment" element={<Payment />} />
-
-        <Route path="/staking-pool" element={<StackingPool />} />
 
         <Route path="/profile" element={<PersionalInfo />} />
         <Route
