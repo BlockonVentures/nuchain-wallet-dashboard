@@ -15,7 +15,7 @@ const routeData = [
   { path: "/check-usermanagementData",  testId: "checkuserManagemantData",shouldPass: true },
 
   { path: "/auth/addEmail-otp",  testId: "enterEmailForgotPassword",shouldPass: true },
-  { path: "/auth/password-reCreate",  testId: "AuthPasswordRecreate",shouldPass: true },
+  { path: "/auth/reset-password",  testId: "AuthPasswordRecreate",shouldPass: true },
   { path: "/profile/add-user",  testId: "addUserFrom",shouldPass: true },
   { path: "/profile",  testId: "AdminProfileForm",shouldPass: true },
 
@@ -23,11 +23,7 @@ const routeData = [
 
 
 
-
-
 describe("AuthRoutes", () => {
-
-
 
   routeData.forEach(({ path, testId, shouldPass }) => {
     test(`Navigates to ${path} and expects ${shouldPass ? "success" : "failure"}`, () => {

@@ -2,7 +2,7 @@ import React from 'react'
 import login_background from "../../assets/images/signup_background.jpeg";
 import icon_loginEmail from "../../assets/images/icon_loginEmail.png";
 import lock_LoginPassword from "../../assets/images/lock_LoginPassword.png";
-export const PasswordRecreate = () => {
+export const ResetPassword = () => {
   return (
 <div className="flex items-center justify-center h-screen !p-2 sm:!p-4 "data-testid="AuthPasswordRecreate" >
   

@@ -37,7 +37,7 @@ export const GetEmailForOtp = () => {
        
   
         {/* Button */}
-       <Link to='/auth/password-reCreate' className='no-underline'>
+       <Link to='/auth/reset-password' className='no-underline'>
        <button className="block w-full h-10 sm:h-12 md:h-[60px] font-[600] text-white bg-[#8712C2] rounded-2xl">
         Login
         </button>
