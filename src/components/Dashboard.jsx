@@ -7,6 +7,7 @@ import CardHistory from "./Charts/CardHistory";
 import TransactionTable from "./TransactionTable";
 import LiquidityPoolChart from "./Charts/PieChart/LiquidityPoolChart";
 import PoolStatusCard from "./PoolStatusCard";
+import StakingPoolChart from "./Charts/PieChart/StakingPoolChart";
 
 const Dashboard = () => {
   const transactionsData = [
@@ -172,6 +173,12 @@ const Dashboard = () => {
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h3 className="mb-4 text-lg font-bold">Liquidity Pool</h3>
             <LiquidityPoolChart />
+         
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h3 className="mb-4 text-lg font-bold">Staking Pool Statistics</h3>
+          
+            <StakingPoolChart/>
           </div>
         </div>
       </div>
