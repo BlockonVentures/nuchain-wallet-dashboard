@@ -8,6 +8,7 @@ import { UserManagement } from "../../pages/UserManagement";
 import { Payment } from "../../pages/Payment";
 import { StackingPool } from "../../pages/StackingPool";
 import { CheckUSerManageMentData } from "../../components/CheckUSerManageMentData";
+import { AddUser } from "../../pages/AddUser";
 
 const HomeRoutes = () => {
   return (
@@ -30,6 +31,7 @@ const HomeRoutes = () => {
         <Route path="/staking-pool" element={<StackingPool />} />
 
         <Route path="/profile" element={<PersionalInfo />} />
+        <Route path="/profile/add-user" element={<AddUser />} />
         <Route
           path="/check-usermanagementData"
           element={<CheckUSerManageMentData />}
